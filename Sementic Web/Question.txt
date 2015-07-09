@@ -1,0 +1,4 @@
+1. how to see rule is working?
+2. Use of Import ?
+3. Consistency
+4. Necessary and sufficient

@@ -1,0 +1,10 @@
+1. own ontology
+2. Import: temporal.owl, import instance, 
+3. Some rules
+4. describe neighbours 
+5.connect
+6. Provide your record ( one by one, with time interval)
+checking rules are working
+
+
+where we can use it, how , future use, as conclusion 

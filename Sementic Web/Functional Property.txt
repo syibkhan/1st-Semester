@@ -1,0 +1,29 @@
+ Functional Property
+A functional property is a property that can only hold a single value for a given individual. 
+For example, Bill's age is a functional property because Bill can only have a single age at a given point in time.
+
+
+
+ Inverse Functional Property
+A property is inverse functional if its inverse is a functional property. So, for example, a URL is an inverse functional property for a
+ web page because there is only one page that corresponds to it (even if the page responds to multiple URLs). 
+
+
+ Symmetric Property
+A symmetric property is an object property that defines a symmetric relationship:
+In mathematics, a binary relation R over a set X is symmetric if it holds for all a and b in X that if a is related to b then b is related to a. 
+
+
+ Transitive Property
+
+A transitive property is an object property that defines a transitive relationship:
+
+So, for example, "ancestor" is a transitive relationship: if a is b's ancestor and b is c's ancestor, then a is c's ancestor. 
+
+ Disjoint Class
+If two (or more) classes are disjoint, they cannot have any members in common. For example, in the Pizza Ontology, NonVegetarianPizza and VegetarianPizza are disjoint classes.
+
+
+ Creating Defined Classes
+
+In Description Logics languages like OWL, classes can be either primitive or defined. Primitive classes only have necessary conditions, i.e., superclasses. Defined classes have necessary and sufficient conditions,
