@@ -1,0 +1,127 @@
+RE group member’s List
+
+
+Syed Ibrahim Khandker     syed.i.khandker@student.jyu.fi
+Sandesh Kumar Hyoju    samyoju@student.jyu.fi
+Timo Tammi            timotammi@gmail.com
+Esko Reivari                          eshereiv@student.jyu.fi
+Henri Murtonen                   hejamurt@student.jyu.fi
+
+-----------------------------------------------------------xxx-------------------------------------------
+
+First phase of the ITKS452 Diary (part 1)
+
+1. Using CHAOS report’s findings (or similar), explain why requirements are important. Also explain how requirements help to increase the chances of having a successful project.
+
+2. What beliefs are often hindering good requirements practices? Why they are actually
+misbeliefs?
+
+3. Provide some definitions for and explain such concepts as “requirements”, “requirementsengineering”, “requirements development”, “requirements management”, “stakeholders”.
+
+4. Describe the machine-environment model (so called Jackson model).
+
+5. Starting with Jackson’s machine-environment model, explain why RE is in fact a problemsolving process (in addition to being problem-stating).
+
+6. Describe all the different requirements engineering components.
+
+7. What is system’s quality attributes? Describe some of them.
+
+8. Discuss the place of requirements in the whole system engineering practice, according to different models, compare them.
+
+9. What is the difference between RD and RM? What activities constitute both?
+
+10. Who is the requirements analyst? What skills this person should have, what are the
+specifics of her/his job?
+
+11. What do we mean when speaking of “requirements’ quality”? What constitutes it? Explain some of important attributes of it.-
+
+12. What are the basic means of achieving the quality in general? How do they are used in RE?
+
+13. Explain why completeness of requirements is a risky factor. How can we deal with it?
+
+14. Explain the stakeholders’ classification framework.
+
+15. Explain such concepts as “business requirements”, “vision”, “features”, and “scope”.
+
+16. Explain different levels and types of requirements.
+
+17. What are project’s scope management and scope creep? What techniques we may use when defining and managing the scope?
+
+18. What is requirements elicitation? What techniques are available for that?
+
+
+19. What did you learn?
+
+20. Reflect your learning to your working experience/project experience or hobby related to software engineering. How can you apply your learning?
+
+---------------------------------------------------------------xxx--------------------------------------------
+
+Vision and Scope Document
+
+
+
+
+1.    Business Requirements    
+1.1.    Background    
+
+In this modern life, use of paper has been decreasing in a big scale while the need of papers are being filled by electronic version of same paper or different electronics form, for example Net-posti. The advantage of the electronic format of the papers are, easily accessible, no chance to have any physical damage, can be accessed anytime anywhere etc. We buy different type of products in our daily life, some of those have product warranty and expiration date. It is very hard for a person to remember information about all his used appliances and gadgets. Our project's target is to analysis and develop a "Product Warranty App" what would continuously store the information about any product. User can store product's name, expiration date and picture about receipt. User can browse warranties with phone or pc. App can push reminder about expiration date to stop using expire dated product or can search status of any entity, therefore he/she can be relax about use of safe product and important receipts, user need not to search paper receipts from different drawers in case any reclamation, no chance for being damage of an important document.
+
+
+1.2.    Business Opportunity    
+
+
+Product warranty app can ensure the use of any product within right time and preserve the receipts for future references. Our main target group is the mobile devices user. At the present time there are approximately 1.75 billion smart phone in use all over the world, therefore a big market is available. A Finnish app "Angry Birds" sold 12 million copies within first 9 months while population of Finland is less than half of that amount, although that was a gaming app but the statistic give the idea that good product has the demand worldwide. If we shorten our target within Finland it will remain approx. 5 million. App must support at least three popular operating systems Android, Symbian and Windows Phone. Two-third of Finns are online shoppers, therefore a good chance to sell the app at low price (e.g. 0.75~1 €). If we find out expectations of the user and gradually develop the performance and scope of app, definitely it could bring to us a good amount of revenue with reputation of the organization.
+ 
+ 
+http://www.stat.fi/til/sutivi/2012/sutivi_2012_2012-11-07_tie_001_en.html
+http://www.emarketer.com/Article/Smartphone-Users-Worldwide-Will-Total-175-Billion-2014/1010536
+http://www.statista.com/statistics/274756/forecast-of-mobile-phone-users-in-finland/
+
+
+1.3.    Business Objectives and Success Criteria    
+
+
+BO-1: User friendly design, bug free, and  supported by at least   three popular operating systems Android, Symbian and Windows Phone. 
+
+BO-2: Revenue should meet the operating cost of the firm after first 6 months. If not than focus on other app.
+
+BO-3: Monitoring the effectiveness of the app. App should have option to add new features as per user requirements. Operation can be done by updating into new version.   
+
+SC-1: Having 500 paid download in first 3 months. And at least 10%new user attraction from following months.  
+
+SC-2: Achieve good rating (3.5 or 4 out of 5) at app marketplace. 
+
+
+1.4.    Customer or Market Needs   
+
+
+1.5.    Business Risks    
+
+RI-1: Too few customers buying Product Warranty App
+RI-2: App is launching from a new firm ( has no reputation so far)
+RI-3: If success doesn’t come (6 months max.) possibility of abandon the project. 
+
+
+2.    Vision of the Solution    
+2.1.    Vision Statement
+
+Product Warranty App as a smartphone based application for storing and browsing the warranty information. Instead of saving and searching paper or electronic receipts, user stores them with smartphone and can easily check if product’s warranty is still valid. User will also get notification when product’s warranty is going to expire. Product Warranty App can be sold worldwide.
+
+2.2.    Major Features 
+
+FE-1: Save warranty information with smartphone and web browser
+FE-2: Browse and search warranty information with smartphone and web browser
+FE-3: Get warning about expiring warranty
+FE-4: Remove expired or invalid warranty information
+
+2.3.    Assumptions and Dependencies    
+
+3.    Scope and Limitations    
+3.1.    Scope of Initial Release    
+3.2.    Scope of Subsequent Releases    
+3.3.    Limitations and Exclusions
+    
+4.    Business Context    
+4.1.    Stakeholder Profiles    
+4.2.    Project Priorities    
+4.3.    Operating Environment
