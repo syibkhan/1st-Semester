@@ -1,0 +1,5 @@
+tomcat.home=C:\Users\Ibrahim\Desktop\study\SOA\Servers\Tomcat v6.0 Server at localhost-config
+build.dir=build
+src.dir=src
+project.name=BITsDemoWebApp
+custom = true

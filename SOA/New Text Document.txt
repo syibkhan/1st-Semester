@@ -1,0 +1,23 @@
+# How would you implement a page which shows a list of files. See also List keys.
+
+I would create a page who send a request to get key in stream and show by default 5 or 6 files.
+Each time people will scroll down, we will launch request with key from the stream to get more files.
+
+The best option is to use an other database, where the access is optimize for huge informations.
+
+
+# Why would you ever use a set-up with virtual machines in a real (production) environment? Or would you not?
+Set-up virtual machines are extremely useful from the perspective of software development due to a number of reasons:
+ -It is cost-efficient: setting up a virtual machine is free while buying a server for the purpose of testing makes no sense
+ and we can optimize our resource usage.
+ -Virtual machines make it easier to test different scenarios, for example the bad connection part of this weeks assignment
+ -It is simply safer to test new functionality in a sandbox, which a set-up with virtual machines practically is
+
+# Which of the optimizations made sense, which ones not?
+Well, I am sure developer won't change their webServer to make an application faster, this kind of decision is made normally by project manager.
+For my point of view to optimize an application load balancing is the best method(believe me I am not selecting it because it was cancelled from assignment).
+you will handle request in a multi threaded environment and forward them into different channel to process the request.
+And memcache can improve performance at a certain limit.
+
+# What should be improved in this exercise if it is given to students in the future?
+Charles?

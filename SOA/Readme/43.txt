@@ -1,0 +1,42 @@
+README
+========
+
+Week43
+--------
+
+
+Reflective Questions
+--------------------
+
+
+#### How does it work? <br>
+
+- Wordcount for specific wordlength<br>
+Map-Function: calculate length for every Word<br>
+Return WordLength:WordList (3:[the,and,...])<br>
+Reduce-Function: count the words per wordlength<br>
+Result: Amount of words for specific wordlength<br>
+
+
+#### What do you have to pay? How is the pricing? Are there hidden costs?<br>
+
+- We have to pay for <br>
+  Amazon EC2 <br>
+  Amazon Elastic MapReduce Price <br>
+  Amazon S3 <br>
+
+- Pricing <br>
+ for  m1.large  6 instances<br>
+ EC2 Price $0.190 per Hour<br>
+ Elastic MapReduce Price $0.044 per Hour<br>
+Estimated cost ($0.190  + $0.044 ) * 6 =   $ 1.404  / hour <br>
+ Amazon S3 costs $668 per month to store 10 TB of data in S3<br>
+ *we could not finish the work so we do not know total hours and S3 space cost
+
+
+
+- Hidden cost <br>
+applicable taxes and duties<br>
+Partial hours are rounded up <br>
+Amazon SimpleDB is also billed separately. (Only applies if you enable debugging for your cluster)<br>
+Additional charge for the MapR M5 and M7 distributions<br>

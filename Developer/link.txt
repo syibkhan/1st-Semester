@@ -1,0 +1,36 @@
+http://www.mediafire.com/api/1.2/file/get_links.php?link_type=direct_download&session_token=8fj2978y5fn4592y7yf23457y27bcfy23ouhf2tno47y5f2384y5f23845
+&quick_key=fnp84f34fn9nf49&response_format=xml
+
+
+
+3f5da49df760d6d0e2534f009c53e91108a0817cb459e85ea5c2af8668da767f6ca2c670f6bcee8678ea4143b909d580a4d9d19906dc323c59a9aa4943a70300d434d0d59446697f 
+
+
+
+------------------
+step 1 : session token got and MAIN folder key
+http://www.mediafire.com/api/1.1/folder/get_info.php?session_token=3f5da49df760d6d0e2534f009c53e91108a0817cb459e85ea5c2af8668da767f6ca2c670f6bcee8678ea4143b909d580a4d9d19906dc323c59a9aa4943a70300d434d0d59446697f
+----------------------
+
+Step 2: folder key
+http://www.mediafire.com/api/1.1/folder/get_content.php?folder_key=myfiles&session_token=ff3ff029ace4c23fbcb9ae20b6658b9f8c643be4e9f084664fb347f15ae6782b3937092dc51f59771a92076acea997f0dd73bf310419e29b66757292f76e6c6275b53964ff9b7f84&content_type=folders
+------------------------
+
+Step 3: to get quick key
+http://www.mediafire.com/api/1.1/folder/get_content.php?folder_key=isiskk2tn4vck&session_token=eb3c7e8ab107fe253066d133008ce0aedf21d90578c02217e2012b546c7411c85936429039b87c6542cd27690d7a642ce3479d0c9e3057fa69b9b216d583ccad929b2f1d4295f553&content_type=files
+-----------------------
+
+Step 4: Download link
+
+http://www.mediafire.com/api/1.2/file/get_links.php?link_type=direct_download&session_token=3f5da49df760d6d0e2534f009c53e91108a0817cb459e85ea5c2af8668da767f6ca2c670f6bcee8678ea4143b909d580a4d9d19906dc323c59a9aa4943a70300d434d0d59446697f&quick_key=oe4tef59qo8f0og&response_format=xml
+
+http://www.mediafire.com/api/1.2/file/get_links.php?link_type=direct_download&session_token=87ac5b621c2eb3b587085cdceafca77ba1d6c344021f0bcba939b7d5db449dc73a8d17f8c36b29e17dc77bf911c504667497dfc4226eb05889c23ea6dd484c67f895341c3c56f215&quick_key=oe4tef59qo8f0og&response_format=xml
+
+
+
+
+http://www.mediafire.com/api/1.1/folder/get_info.php?session_token=2298c869ec0369f00175f55427193ac33fee371d75fa9f1dacd25a1cebebd7910626ff3b187534e11aae461ee0fefc2fb653accc6a6a61919c2a29d96ef80f74ecbc35c08cc81948
+
+
+
+http://www.mediafire.com/api/1.1/folder/get_content.php?folder_key=myfiles&session_token=ff3ff029ace4c23fbcb9ae20b6658b9f8c643be4e9f084664fb347f15ae6782b3937092dc51f59771a92076acea997f0dd73bf310419e29b66757292f76e6c6275b53964ff9b7f84&content_type=folders

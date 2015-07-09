@@ -1,0 +1,3 @@
+Distribute the processing is mapping
+Collecting the processed data according demand  is reducing
+Hadoop sense map and reduce task to appropreat server in the cluster

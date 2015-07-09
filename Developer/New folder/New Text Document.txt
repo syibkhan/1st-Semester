@@ -1,0 +1,102 @@
+
+<html>
+<body>
+
+
+
+<b>Login status :</b> <span id="direct_download"></span><br />
+
+
+
+
+
+
+<?PHP
+$email = $_POST ['email'];
+$password = $_POST ['password'];
+$app_id = $_POST ['app_id'];
+$api_key = $_POST ['api_key'];
+$str= sha1("$email$password$app_id$api_key");
+?>
+
+<script>
+
+
+
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+// variable import
+
+var php_var_str = "<?php echo $str; ?>";
+var php_var_email = "<?php echo $email; ?>";
+var php_var_password = "<?php echo $password; ?>";
+var php_var_id = "<?php echo  $app_id; ?>";
+
+// Session token URL string creation
+str = "https://www.mediafire.com/api/1.1/user/get_session_token.php?email=" + php_var_email + "&password=" + php_var_password + "&application_id=" + php_var_id + "&signature=" + php_var_str;
+
+xmlhttp.open("GET", str ,false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+str1 = xmlDoc.getElementsByTagName("session_token")[0].childNodes[0].nodeValue;
+
+document.write(str1);
+
+
+
+
+
+// Folder key
+str2 = "http://www.mediafire.com/api/1.1/folder/get_content.php?folder_key=myfiles&session_token=" + str1 + "&content_type=folders";
+xmlhttp.open("GET", str2 ,false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+folderkey9 = xmlDoc.getElementsByTagName("folderkey")[0].childNodes[0].nodeValue;
+
+
+//x=xmlDoc.getElementsByTagName('folderkey');
+/*for (i=0;i<x.length;i++)
+{
+folderkey1 = x[0].childNodes[0].nodeValue;
+folderkey2 = x[1].childNodes[0].nodeValue;
+foldereky3 = x[2].childNodes[0].nodeValue;
+}*/
+
+//quickkey
+str3= "http://www.mediafire.com/api/1.1/folder/get_content.php?folder_key="+ folderkey9 + "&session_token=" + str1 +"&content_type=files";
+xmlhttp.open("GET", str3 ,false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+quick= xmlDoc.getElementsByTagName("quickkey")[0].childNodes[0].nodeValue;
+
+//downloadlink
+str4=  "http://www.mediafire.com/api/1.2/file/get_links.php?link_type=direct_download&session_token=" + str1 + "&quick_key=" + quick + "&response_format=xml";
+xmlhttp.open("GET", str3 ,false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+
+function getContent(elementName){
+element = xmlDoc.getElementsByTagName(elementName)[0]   
+if (element.childNodes.length > 0){
+value = element.childNodes[0].nodeValue
+} else {
+value = "UNDEFINED"
+}
+
+document.getElementById(elementName).innerHTML= value;
+}
+
+getContent("direct_download");
+
+
+</script>
+
+</body>
+</html>

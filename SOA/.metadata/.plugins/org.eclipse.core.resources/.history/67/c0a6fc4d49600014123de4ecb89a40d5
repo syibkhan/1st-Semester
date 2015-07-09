@@ -1,0 +1,97 @@
+package fire;
+
+
+
+
+public class Mediafire {
+ 
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+ 
+        // Create a web client
+        final WebServiceClient webClient = new WebClient( BrowserVersion.FIREFOX_3_6 );
+        webClient.setThrowExceptionOnScriptError( false );
+        webClient.setCssEnabled( false );
+        webClient.setIncorrectnessListener( new IncorrectnessListener() {
+            @Override
+            public void notify(String arg0, Object arg1) {
+                // Nothing
+            }
+        });
+ 
+        try {
+            final HtmlPage page = webClient.getPage( "http://www.mediafire.com/" );
+            System.getProperties().put( "org.apache.commons.logging.simplelog.defaultlog", "fatal" );
+ 
+            // Log in
+            final HtmlForm form = page.getFormByName( "form_login1" );
+            HtmlTextInput emailField = form.getInputByName( "login_email" );
+            emailField.setValueAttribute( "your email" );
+ 
+            HtmlPasswordInput pwdField = form.getInputByName( "login_pass" );
+            pwdField.setValueAttribute( "your password" );
+ 
+            final HtmlImageInput button = form.getInputByName( "submit_login" );
+            HtmlPage page2 = (HtmlPage) button.click();
+ 
+            // Then, get the JS script to extract the links
+            // We parse the script and not the modified HTML (which I did not succeed BTW)
+            JavaScriptPage jsPage = webClient.getPage( "http://www.mediafire.com/js/myfiles.php/?45144" );
+            // 45144: seems to be the same ID for all (anonymous and registered account)
+ 
+            Pattern pattern = Pattern.compile( "es\\[\\d+\\]=Array\\(([^;]*)\\);" );
+            Matcher m = pattern.matcher( jsPage.getContent());
+            while( m.find()) {
+ 
+                String[] parts = m.group( 1 ).split( "," );
+                String link = removeSurroundingQuotes( parts[ 3 ]);
+                String filename = removeSurroundingQuotes( parts[ 5 ]);
+                System.out.println( filename + ": http://mediafire/download.php?" + link );
+            }
+ 
+        } catch( FailingHttpStatusCodeException e ) {
+            e.printStackTrace();
+ 
+        } catch( MalformedURLException e ) {
+            e.printStackTrace();
+ 
+        } catch( IOException e ) {
+            e.printStackTrace();
+ 
+        } finally {
+            webClient.closeAllWindows();
+        }
+    }
+ 
+    /**
+     * Removes surrounding quotes.
+     * @param s a string
+     * <p>
+     * If the string is null or if its length is lesser than 2, then the original string is returned.
+     * If the first and last characters are different, then the original string is returned.
+     * If the first character is not a single quote or a double quote, then the original string is returned.
+     * Otherwise, the first and last characters are returned.
+     * </p>
+     */
+    private static String removeSurroundingQuotes( String s ) {
+ 
+        String result;
+        if( s == null )
+            result = s;
+        else {
+            int length = s.length();
+            if( length < 2 )
+                result = s;
+            else if( s.charAt( 0 ) != s.charAt( length - 1 ))
+                result = s;
+            else if( s.charAt( 0 ) != '\'' && s.charAt( 0 ) != '"' )
+                result = s;
+            else
+                result = s.substring( 1, s.length() - 1 );
+        }
+ 
+        return result;
+    }
+}

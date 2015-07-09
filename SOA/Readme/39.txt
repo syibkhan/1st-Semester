@@ -1,0 +1,97 @@
+README
+
+2 	
+
+=======
+
+3 	
+
+Week38:
+
+4 	
+
+-------
+
+5 	
+
+Main class: src.fi.jyu.it.ties456.week38.Main.java
+
+6 	
+
+7 	
+
+Week38_Vaadin:
+
+8 	
+
+--------------
+
+9 	
+
+It is required to add the Week38 project to the server classpath.<br>
+
+10 	
+
+The server used was Tomcat 7.0 <br>
+
+11 	
+
+Main class: src.com.example.week38_vaadin.Week38_Vaadin.java
+
+12 	
+
+13 	
+
+14 	
+
+Reflective Questions
+
+15 	
+
+--------------------
+
+16 	
+
+17 	
+
+####Most REST services do not use WSDL and SOAP. What could be reasons for this?<br>
+
+18 	
+
+- REST mainly works with http and most programming languages have libraries for that. For SOAP this is not ensured.<br>
+
+19 	
+
+- SOAP is requests XML structures, whereas with REST you can also for example use JSON.<br>
+
+20 	
+
+- REST supports fixed data manipulation protocol (CRUD) with which you always work on objects. With SOAP you do not have this kind of manipulation protocol.<br>
+
+21 	
+
+22 	
+
+####SOAP and WSDL use XML, would it be better if they would use something more modern like JSON?<br>
+
+23 	
+
+- This would not work, since JSON is schemaless and WSDL requires a schema to create the code automatically.<br>
+
+24 	
+
+25 	
+
+####How did you handle errors and how should it be done? Imagine that your application is running on a production server.<br>
+
+26 	
+
+- Number Credit Input: there should be an error message showing the user, that the input should only be an integer.<br>
+
+27 	
+
+- For the command line program it's enough to show the exception, because the user can directly see them.<br>
+
+28 	
+
+  For the graphic user interface, exceptions should be caught and an error message should tell the users what went wrong.<br>

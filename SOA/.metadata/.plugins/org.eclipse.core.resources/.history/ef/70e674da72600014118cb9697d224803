@@ -1,0 +1,4 @@
+tomcat.home=D:/development/apache-tomcat-6.0.35
+build.dir=build
+src.dir=src
+project.name=BITsDemoWebApp

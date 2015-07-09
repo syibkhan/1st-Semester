@@ -1,0 +1,19 @@
+
+
+Project ID: fresh-generator-725 Project Number: 588263013518
+
+mvn archetype:generate -Dappengine-version=1.9.12 -Dapplication-id=fresh-generator-725 -Dfilter=com.google.appengine.archetypes:
+com.ibrahim.testtbook. ( packageName)
+testbook
+
+
+
+C:\Users\Ibrahim\testbook
+
+mvn appengine:update
+
+https://fresh-generator-725.appspot.com
+
+sigma-rarity-725
+
+mvn archetype:generate -Dappengine-version=1.9.12 -Dapplication-id=sigma-rarity-725 -Dfilter=com.google.appengine.archetypes:

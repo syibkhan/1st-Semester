@@ -1,0 +1,38 @@
+--------
+step 1		http://api.sendspace.com/rest/?method=auth.createtoken&api_key=YJ0C928BRC&api_version=1.0
+YJ0C928BRC
+-----------
+
+token = nvh9jheqif9yfywtgzj9ka3bwyyhl7hy
+pass = f02304mBD = ccd3910f3951c6163643e86fb4143427
+md5 = nvh9jheqif9yfywtgzj9ka3bwyyhl7hycd3910f3951c6163643e86fb4143427 = 154da72e5b09b66ed0e3a5486c81bcda
+http://api.sendspace.com/rest/?method=auth.login&token=nvh9jheqif9yfywtgzj9ka3bwyyhl7hy&user_name=bd.syed@gmail.com&tokened_password=154da72e5b09b66ed0e3a5486c81bcda&api_version=1.0
+session key = 027b67671001881498aa742af353de1e
+---------------------------------
+
+http://api.sendspace.com/rest/?method=upload.getinfo&session_key=q88by4da8ucqsdb42b8lzd2e3uahx7kd&api_version=1.0
+
+
+------------------
+
+<result method="upload.getinfo" status="ok">
+<upload url="http://fs07u.sendspace.com/apiupload?DESTINATION_DIR=15&UPLOAD_IDENTIFIER=1129284304.1414587177.82EAE568.21.0&MAX_FILE_SIZE=314572800" 
+progress_url="http://fs07u.sendspace.com/progressapiupload.html?UPLOAD_IDENTIFIER=1129284304.1414587177.82EAE568.21.0&limit=314572800&nginx=1" max_file_size="314572800" upload_identifier="1129284304.1414587177.82EAE568.21.0" extra_info="kPyiwAR3OCkmJ8FyAT5iCdY5A4gg%3BfDcZHdXDVggBQq4b2g3JkuC95Az2l9FYMZTETXUNrU4lL%2FFaOQXuQh%2BQ0lZ5Negw3RgrmG3bOv%2FInA%3D%3D"/>
+</result>     
+
+
+http://fs07u.sendspace.com/apiupload?DESTINATION_DIR=5&UPLOAD_IDENTIFIER=1945318431.1414874617.82EAB438.21.0&MAX_FILE_SIZE=314572800
+http://fs01u.sendspace.com/apiupload?DESTINATION_DIR=4&UPLOAD_IDENTIFIER=619395354.1414884456.82EAB438.20.0&MAX_FILE_SIZE=314572800
+314572800
+
+
+f95b1b49ec8822adac9d2ffc0974fcea
+593bce8364310f46c80b584f7fe07e3d
+
+http://api.sendspace.com/rest/?method=folders.getcontents&session_key=63ku9j53v04rj1quqxd21im0t312tk5q&folder_id=0
+
+http://api.sendspace.com/rest/?method=files.getinfo&session_key=63ku9j53v04rj1quqxd21im0t312tk5q
+
+
+http://api.sendspace.com/rest/?method=folders.getcontents&session_key=ffrxqqig9j3igyibyrnjr7ceoqv13xz9&folder_id=zswcmw
+
