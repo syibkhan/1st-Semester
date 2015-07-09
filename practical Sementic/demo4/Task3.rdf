@@ -1,0 +1,49 @@
+@prefix cv  : <http://users.jyu.fi/~syibkhan/ontology-68#> .
+@prefix wiki  : <http://en.wikipedia.org/wiki/> .
+@prefix w3  : <http://www.w3schools.com/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+cv :Ibrahim rdf:type cv :Person.
+         
+cv:Ibrahim       cv:hasPhoneNumber "+358645747224"^^xsd:string.
+         
+cv:Ibrahim        cv:hasDateOfBirth "17.09.1986"^^xsd:string.
+         
+cv:Ibrahim        cv:hasAge "27.5"^^xsd:float.
+         
+cv:Ibrahim       cv:hasFavouriteQuote "Honesty is the best policy."^^xsd:string .
+         
+:Ibrahim          cv:hasFullName "Syed Ibrahim Khandker"^^xsd:string .
+         
+cv:Ibrahim     	 cv:hasEmailAddress "bd.syed@gmail.com"^^xsd:string .
+         
+cv:Ibrahim  	 cv:hasWebpage "http://users.jyu.fi/~syibkhan"^^xsd:string .
+         
+cv:Ibrahim 	 cv:hasStudent cv:Amir .
+        
+cv:Ibrahim  	  cv:hasMother cv:Amma .
+         
+cv:Ibrahim  	  cv:hasCitizenship wiki:Bangladesh .
+                
+cv:Ibrahim	  cv:liveIn wiki:Finland .
+         
+cv:Ibrahim  	  cv:knowLanguage  w3:Java .
+         
+cv:Ibrahim  	  cv:studiedIn cv:Jyu .
+         
+cv:Ibrahim 	  cv:hasGender cv:Male .
+         
+cv:Ibrahim 	 cv:hasFather cv:Mohsin .
+         
+cv:Ibrahim         cv:hasChild cv:Musa .
+         
+cv:Ibrahim         cv:hasHobby wiki:Badminton .
+         
+cv:Ibrahim         cv:hasJob  cv:Programmer .
+         
+cv:Ibrahim         cv:hasWife cv:Sadia.
+         
+cv:Ibrahim        cv:hasTeacher :Vagan .

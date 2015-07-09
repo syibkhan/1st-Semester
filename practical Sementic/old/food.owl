@@ -1,0 +1,823 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://users.jyu.fi/~syibkhan/food.owl#"
+     xml:base="http://users.jyu.fi/~syibkhan/food.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://users.jyu.fi/~syibkhan/food.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasBabyFood -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasBabyFood">
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#BabyFood"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#BabyMeal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasFoodItem -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasFoodItem">
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Food"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasHardDrink -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasHardDrink">
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#HardDrinks"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasMade -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasMade">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Lunch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasSoftDrink -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasSoftDrink">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#SoftDrinks"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasSpices -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasSpices">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Spices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#isConsistOf -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#isConsistOf">
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Food"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#isCookedBy -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#isCookedBy"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#isMadeBy -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#isMadeBy">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Lunch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#isPreparedBy -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#isPreparedBy">
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Chef"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Food"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#isUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#isUsedBy">
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Utensil"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Drinks"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasFirstName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasLastName -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasLastName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasPieces -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasPieces">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasPrice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#hasWeight">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#isInShelfNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/food.owl#isInShelfNumber">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Metal"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#AdultFood -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#AdultFood">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#BabyFood -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#BabyFood">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Food"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#AdultFood"/>
+                            <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#VegetarianFood"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#BabyMeal -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#BabyMeal">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#hasBabyFood"/>
+                <owl:onClass rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#BabyFood"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Breakfast -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Breakfast">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Ceramic -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Ceramic">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Utensil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Chef -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Chef"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Cool -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Cool">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Machine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#DeepFridge -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#DeepFridge">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Cool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Drinks -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Drinks">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#HardDrinks"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#SoftDrinks"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Female -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Female">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#FemaleChef -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#FemaleChef">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Chef"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Female"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Chef"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Food -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Food">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#isPreparedBy"/>
+                <owl:someValuesFrom rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Chef"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Glass -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Glass">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Utensil"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Ceramic"/>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#HardDrinks -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#HardDrinks">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Drinks"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Human -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Lunch -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Lunch">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Machine -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Machine"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Male -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Male">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#MaleChef -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#MaleChef">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Chef"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Male"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Chef"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Meal -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Meal">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#isConsistOf"/>
+                <owl:someValuesFrom rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Food"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Melamine -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Melamine">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Utensil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Metal -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Metal">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Utensil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#NormalFridge -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#NormalFridge">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Cool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Oven -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Oven">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#GasOven"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/food.owl#MicrowaveOven"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Warm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#SoftDrinks -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#SoftDrinks">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Drinks"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Spices -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Spices"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Stove -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Stove">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Warm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Supper -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Supper">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Utensil -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Utensil">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#isUsedBy"/>
+                <owl:someValuesFrom rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Human"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#VegetarianFood -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#VegetarianFood">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Vegeterian -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Vegeterian">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Meal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#hasFoodItem"/>
+                <owl:allValuesFrom rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#VegetarianFood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Warm -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Warm">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Machine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Washing -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Washing">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Machine"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Anna -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Anna">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#FemaleChef"/>
+        <hasMade rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Lunch1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#BabyMilk -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#BabyMilk">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#BabyFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#BayLeaf -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#BayLeaf">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Spices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Bread -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Bread">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#AdultFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Candy -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Candy">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#BabyFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Chicken -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Chicken">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#AdultFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Chili -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Chili">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Spices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Chocolet -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Chocolet">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#BabyFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Cucumber -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Cucumber">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#VegetarianFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Cumin -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Cumin">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Spices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Curry -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Curry">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#AdultFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Fish -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Fish">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#AdultFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#GasOven -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#GasOven">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Warm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#HappyBaby -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#HappyBaby">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#BabyMeal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Knife -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Knife">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Metal"/>
+        <isInShelfNumber rdf:datatype="&xsd;int">8</isInShelfNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Lunch1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Lunch1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Lunch"/>
+        <isMadeBy rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Anna"/>
+        <hasSpices rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Tarmaric"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Lunch2 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Lunch2">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Lunch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#MicrowaveOven -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#MicrowaveOven">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Warm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Mikko -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Mikko">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#MaleChef"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Morn1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Morn1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Breakfast"/>
+        <hasSoftDrink rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Sprite"/>
+        <hasSoftDrink rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Tea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Morn2 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Morn2">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Breakfast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Rice -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Rice">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#AdultFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Sprite -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Sprite">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#SoftDrinks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Supper1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Supper1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Supper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Supper2 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Supper2">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Supper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Tarmaric -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Tarmaric">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Spices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Tea -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Tea">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#SoftDrinks"/>
+        <hasDescription rdf:datatype="&xsd;string">Normal Black Tea</hasDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Tomato -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Tomato">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#VegetarianFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Veg1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Veg1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Vegeterian"/>
+        <hasFoodItem rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#Cucumber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#Vodca -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#Vodca">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#HardDrinks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/food.owl#vegetable -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/food.owl#vegetable">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/food.owl#VegetarianFood"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

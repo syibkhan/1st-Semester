@@ -1,0 +1,618 @@
+@prefix : <http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl> .
+
+<http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+
+xsd:date rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+
+xsd:time rdf:type rdfs:Datatype .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#consistsMusic
+
+:consistsMusic rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Album ;
+               
+               rdfs:range :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#hasMusic
+
+:hasMusic rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Artist ;
+          
+          rdfs:range :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#hasMusicGenre
+
+:hasMusicGenre rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Music ;
+               
+               rdfs:range :MusicGenre .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#hasMusicPerformedOn
+
+:hasMusicPerformedOn rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:domain :Music ;
+                     
+                     rdfs:range :MusicInstrument .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#isComposerOf
+
+:isComposerOf rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Composer ;
+              
+              rdfs:range :Music ;
+              
+              owl:inverseOf :isMusicComposedBy .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#isInstrumentOf
+
+:isInstrumentOf rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Music ;
+                
+                rdfs:domain :MusicInstrument .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#isMusicComposedBy
+
+:isMusicComposedBy rdf:type owl:FunctionalProperty ,
+                            owl:ObjectProperty ;
+                   
+                   rdfs:range :Composer ;
+                   
+                   rdfs:domain :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#isMusicGenreOf
+
+:isMusicGenreOf rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Music ;
+                
+                rdfs:domain :MusicGenre ;
+                
+                owl:inverseOf :hasMusicGenre .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#isMusicPerformedBy
+
+:isMusicPerformedBy rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:domain :Music ;
+                    
+                    rdfs:range :Singer .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#playsInstrument
+
+:playsInstrument rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Artist ;
+                 
+                 rdfs:range :MusicInstrument .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#albumTitle
+
+:albumTitle rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            
+            rdfs:domain :Album ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#generDescription
+
+:generDescription rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  
+                  rdfs:domain :MusicGenre ;
+                  
+                  rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#generName
+
+:generName rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :MusicGenre ;
+           
+           rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#hasFirstName
+
+:hasFirstName rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              
+              rdfs:domain :Human ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#hasLastName
+
+:hasLastName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :Human ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#relasedDate
+
+:relasedDate rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:range xsd:date .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#songLength
+
+:songLength rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            
+            rdfs:range xsd:time .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#songName
+
+:songName rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#totalAlbumTracks
+
+:totalAlbumTracks rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  
+                  rdfs:range xsd:int .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Acappella
+
+:Acappella rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( :ChurchChant
+                                               :IslamicAnasheed
+                                             )
+                               ] ;
+           
+           rdfs:subClassOf :MusicGenre .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#AcappellaMusic
+
+:AcappellaMusic rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:intersectionOf ( :Music
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasMusicGenre ;
+                                                             owl:allValuesFrom :Acappella
+                                                           ]
+                                                         )
+                                    ] ;
+                
+                rdfs:subClassOf :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Album
+
+:Album rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :consistsMusic ;
+                             owl:someValuesFrom :Music
+                           ] ;
+       
+       owl:disjointWith :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Artist
+
+:Artist rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:intersectionOf ( :Human
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasMusic ;
+                                                     owl:someValuesFrom :Music
+                                                   ]
+                                                 )
+                            ] ;
+        
+        rdfs:subClassOf :Human ;
+        
+        owl:disjointWith :Music ,
+                         :MusicGenre ,
+                         :MusicInstrument .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#ChurchChant
+
+:ChurchChant rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Acappella .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#ClassicalMusic
+
+:ClassicalMusic rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Composer
+
+:Composer rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Artist .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Female
+
+:Female rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Human .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#FemaleSinger
+
+:FemaleSinger rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :Female
+                                                         :Singer
+                                                       )
+                                  ] .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Guitar
+
+:Guitar rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:oneOf ( :acousticGuitar
+                                          :electricGuitar
+                                        )
+                            ] ;
+        
+        rdfs:subClassOf :MusicInstrument .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#GuitarMusic
+
+:GuitarMusic rdf:type owl:Class ;
+             
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( :Music
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasMusicPerformedOn ;
+                                                          owl:someValuesFrom :Guitar
+                                                        ]
+                                                      )
+                                 ] ;
+             
+             rdfs:subClassOf :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Hiphop
+
+:Hiphop rdf:type owl:Class ;
+        
+        rdfs:subClassOf :MusicGenre .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Human
+
+:Human rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#IslamicAnasheed
+
+:IslamicAnasheed rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Acappella .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#JazzMusic
+
+:JazzMusic rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Music .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Male
+
+:Male rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Human .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#MaleComposer
+
+:MaleComposer rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :Composer
+                                                         :Male
+                                                       )
+                                  ] .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#MaleSinger
+
+:MaleSinger rdf:type owl:Class ;
+            
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( :Male
+                                                       :Singer
+                                                     )
+                                ] .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Music
+
+:Music rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :isMusicPerformedBy ;
+                             owl:someValuesFrom :Artist
+                           ] ;
+       
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :isMusicComposedBy ;
+                         owl:onClass :Composer ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       
+       owl:disjointWith :MusicGenre ,
+                        :MusicInstrument .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#MusicGenre
+
+:MusicGenre rdf:type owl:Class ;
+            
+            owl:disjointWith :MusicInstrument .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#MusicInstrument
+
+:MusicInstrument rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#NasheedMusic
+
+:NasheedMusic rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :AcappellaMusic
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasMusicGenre ;
+                                                           owl:allValuesFrom :IslamicAnasheed
+                                                         ]
+                                                       )
+                                  ] ;
+              
+              rdfs:subClassOf :AcappellaMusic .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#NonSinger
+
+:NonSinger rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( :Human
+                                                      [ rdf:type owl:Class ;
+                                                        owl:complementOf :Singer
+                                                      ]
+                                                    )
+                               ] .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Piano
+
+:Piano rdf:type owl:Class ;
+       
+       rdfs:subClassOf :MusicInstrument .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Rock
+
+:Rock rdf:type owl:Class ;
+      
+      rdfs:subClassOf :MusicGenre .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#RockMusic
+
+:RockMusic rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Music ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasMusicGenre ;
+                             owl:allValuesFrom :Rock
+                           ] .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#Singer
+
+:Singer rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Artist .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#violin
+
+:violin rdf:type owl:Class ;
+        
+        rdfs:subClassOf :MusicInstrument .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#acousticGuitar
+
+:acousticGuitar rdf:type owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#electricGuitar
+
+:electricGuitar rdf:type owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Human
+                :MusicGenre
+                :MusicInstrument
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Album
+                :Human
+                :MusicGenre
+                :MusicInstrument
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Guitar
+                :Piano
+                :violin
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

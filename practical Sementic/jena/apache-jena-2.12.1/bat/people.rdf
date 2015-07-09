@@ -1,0 +1,42 @@
+
+<!-- Processed by Id: cwm.py,v 1.144 2003/09/14 20:20:20 timbl Exp -->
+<!--     using base file:/tmp/tmpjaoz0O-rdfconverter-->
+
+
+<rdf:RDF xmlns="http://example.org#"
+    xmlns:e="http://jyu.fi/employment#"
+    xmlns:f="http://example.org#"
+    xmlns:j="http://jyu.fi/jobs#"
+    xmlns:log="http://www.w3.org/2000/10/swap/log#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <rdf:Description rdf:about="http://example.org#bill">
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</age>
+<firstName>Bill</firstName>
+<surName>Boul</surName>
+        <loves rdf:resource="http://example.org#jane"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org#jane">
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</age>
+<firstName>Jane</firstName>
+<surName>Joli</surName>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org#john">
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</age>
+<firstName>John</firstName>
+<surName>More</surName>
+        <hasFriend rdf:resource="http://example.org#bill"/>
+        <loves rdf:resource="http://example.org#mary"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org#mary">
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</age>
+<firstName>Mary</firstName>
+<surName>Popens</surName>
+    </rdf:Description>
+</rdf:RDF>
+
+

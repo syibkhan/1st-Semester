@@ -1,0 +1,15 @@
+prefix uni: <http://users.jyu.fi/~syibkhan/university.owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+SELECT ?x
+FROM  <http://users.jyu.fi/~syibkhan/Task3.n3>
+
+WHERE {
+?x uni:hasPublication ?y. ?y uni:hasWon uni:GoldMadel
+}
+
+
+

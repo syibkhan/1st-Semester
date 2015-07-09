@@ -1,0 +1,31 @@
+
+<!-- Processed by Id: cwm.py,v 1.144 2003/09/14 20:20:20 timbl Exp -->
+<!--     using base file:/tmp/tmpmXuemD-rdfconverter-->
+
+
+<rdf:RDF xmlns="http://example.org#"
+    xmlns:e="http://jyu.fi/employment#"
+    xmlns:f="http://example.org#"
+    xmlns:j="http://jyu.fi/jobs#"
+    xmlns:log="http://www.w3.org/2000/10/swap/log#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <rdf:Description rdf:about="http://example.org#bill">
+        <e:worksAs rdf:resource="http://jyu.fi/jobs#professor"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org#jane">
+        <e:worksAs rdf:resource="http://jyu.fi/jobs#juniorResearcher"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org#john">
+        <e:worksAs rdf:resource="http://jyu.fi/jobs#teacher"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org#mary">
+        <e:worksAs rdf:resource="http://jyu.fi/jobs#seniorResearcher"/>
+    </rdf:Description>
+</rdf:RDF>
+
+

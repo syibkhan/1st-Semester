@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://users.jyu.fi/~syibkhan/youtube.owl#"
+     xml:base="http://users.jyu.fi/~syibkhan/youtube.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#hasVideos -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#hasVideos"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#isActedBy -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#isActedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Actor -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Actor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Human"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#hasVideos"/>
+                        <owl:someValuesFrom rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Video"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Camera -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Camera">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#StillCamera"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#VideoCamera"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Crew -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Crew">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Human"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Actor"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Documentary -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Documentary">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Equipment -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Equipment"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#FemaleActor -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#FemaleActor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Actor"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#woman"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Human -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Human"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#MaleActor -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#MaleActor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Actor"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Man"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Man -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Man">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Movie -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Movie">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Religious -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Religious">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Song -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Song">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Tutorial -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Tutorial">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#Video -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#Video">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#isActedBy"/>
+                <owl:someValuesFrom rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Actor"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#YoutubePlayList -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#YoutubePlayList"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#woman -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#woman">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#StillCamera -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#StillCamera">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Equipment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/youtube.owl#VideoCamera -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/youtube.owl#VideoCamera">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/youtube.owl#Equipment"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

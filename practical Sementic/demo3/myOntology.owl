@@ -1,0 +1,434 @@
+@prefix : <http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16> .
+
+<http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasCapitalCity
+
+:hasCapitalCity rdf:type owl:FunctionalProperty ,
+                         owl:ObjectProperty ;
+                
+                rdfs:range :City ;
+                
+                rdfs:domain :Country .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasFavouriteFood
+
+:hasFavouriteFood rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :Food ;
+                  
+                  rdfs:domain :Human .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasRecord
+
+:hasRecord rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Human ;
+           
+           rdfs:range :Record .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasSex
+
+:hasSex rdf:type owl:FunctionalProperty ,
+                 owl:ObjectProperty ;
+        
+        rdfs:range :Gender ;
+        
+        rdfs:domain :Human .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasWife
+
+:hasWife rdf:type owl:FunctionalProperty ,
+                  owl:ObjectProperty ;
+         
+         rdfs:domain :Man ;
+         
+         rdfs:range :Woman .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasAge
+
+:hasAge rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        
+        rdfs:domain :Human ;
+        
+        rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasFullName
+
+:hasFullName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :Human ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasPopulation
+
+:hasPopulation rdf:type owl:DatatypeProperty ;
+               
+               rdfs:domain :Place ;
+               
+               rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasPrice
+
+:hasPrice rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Food ;
+          
+          rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#hasStudent
+
+:hasStudent rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Education_Institute ;
+            
+            rdfs:range xsd:integer .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#City
+
+:City rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Place .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Country
+
+:Country rdf:type owl:Class ;
+         
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasCapitalCity ;
+                               owl:onClass :City ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] ;
+         
+         rdfs:subClassOf :Place .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Education_Institute
+
+:Education_Institute rdf:type owl:Class ;
+                     
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:oneOf ( :Jyu
+                                                       :JAMK
+                                                     )
+                                         ] ;
+                     
+                     rdfs:subClassOf :Institute .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Education_Record
+
+:Education_Record rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Record .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#English_Food
+
+:English_Food rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Food .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#EuropeanCountry
+
+:EuropeanCountry rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Country .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Female
+
+:Female rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Gender .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Finnish_Food
+
+:Finnish_Food rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Food .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Food
+
+:Food rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:unionOf ( :English_Food
+                                          :Finnish_Food
+                                        )
+                          ] .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Gender
+
+:Gender rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Human
+
+:Human rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRecord ;
+                             owl:someValuesFrom :Record
+                           ] .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Institute
+
+:Institute rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Male
+
+:Male rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Gender .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Man
+
+:Man rdf:type owl:Class ;
+     
+     rdfs:subClassOf :Human ;
+     
+     owl:disjointWith :Woman .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Place
+
+:Place rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Record
+
+:Record rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Sports_Institute
+
+:Sports_Institute rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Institute .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Study_Record
+
+:Study_Record rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Record .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Woman
+
+:Woman rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :Female
+                                                  :Human
+                                                )
+                           ] ;
+       
+       rdfs:subClassOf :Human .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#nonEuropeanCountry
+
+:nonEuropeanCountry rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :Country ,
+                                    [ rdf:type owl:Class ;
+                                      owl:complementOf :EuropeanCountry
+                                    ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#EducationOfIbrahim
+
+:EducationOfIbrahim rdf:type :Education_Record ,
+                             owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Finland
+
+:Finland rdf:type :Country ,
+                  owl:NamedIndividual ;
+         
+         :hasCapitalCity :Helsinki .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Helsinki
+
+:Helsinki rdf:type :City ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#HipposHalli
+
+:HipposHalli rdf:type :Sports_Institute ,
+                      owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Ibrahim
+
+:Ibrahim rdf:type :Male ,
+                  :Man ,
+                  owl:NamedIndividual ;
+         
+         :hasAge "27.0"^^xsd:float ;
+         
+         :hasFullName "Syed Ibrahim Khander"^^xsd:string ;
+         
+         :hasRecord :EducationOfIbrahim ;
+         
+         :hasWife :Sadia ;
+         
+         :hasRecord :SportRecordOfIbrahim .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#JAMK
+
+:JAMK rdf:type :Education_Institute ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Jyu
+
+:Jyu rdf:type :Education_Institute ,
+              owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Makkara
+
+:Makkara rdf:type :Finnish_Food ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Sadia
+
+:Sadia rdf:type :Woman ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Salad
+
+:Salad rdf:type :Finnish_Food ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#SportRecordOfIbrahim
+
+:SportRecordOfIbrahim rdf:type :Study_Record ,
+                               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#Tea
+
+:Tea rdf:type :English_Food ,
+              owl:NamedIndividual ;
+     
+     :hasPrice "2.5"^^xsd:float .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

@@ -1,0 +1,23 @@
+prefix j: <http://jyu.fi/jobs#> 
+prefix e: <http://jyu.fi/employment#>
+prefix f: <http://example.org#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+
+SELECT ?fullName ?job
+
+FROM <http://users.jyu.fi/~olkhriye/ties452/rdf/employment.rdf>
+FROM <http://users.jyu.fi/~olkhriye/ties452/rdf/people.rdf>
+FROM <http://users.jyu.fi/~olkhriye/ties452/rdf/jobs.rdf>
+
+
+WHERE {
+?person f:age ?age . FILTER (?age < 30)
+?person e:worksAs ?job. ?job a j:ResearchJob.
+?person f:firstName ?firstName ;
+f:surName ?surname
+BIND(CONCAT(?firstName," ",?surname) AS ?fullName)
+}
+ORDER BY ASC (?Age)
+

@@ -1,0 +1,15 @@
+@prefix ex: <http://www.example.com/ont#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:book_1 a ex:Science ;
+	ex:size "100" ;
+	ex:title "Science book 1" .
+
+ex:book_2 a ex:Science ;
+	ex:size "1000" ;
+	ex:title "Science book 2" .
+
+ex:book_3 a ex:Fantasy ;
+	ex:size "100" ;
+	ex:title "Fantasy book 1" .

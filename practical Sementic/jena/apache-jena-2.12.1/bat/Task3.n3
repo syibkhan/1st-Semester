@@ -1,0 +1,41 @@
+@prefix uni: <http://users.jyu.fi/~syibkhan/university.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+
+uni:Researcher1 a uni:Researcher; uni:hasPublication uni:ComputingTheory; uni:hasWorkAt uni:Jyu.
+
+uni:ComputingTheory a uni:Publication; uni:hasWon uni:GoldMadel.
+
+uni:Computing a uni:BachelorProgram.
+
+uni:BBA a uni:BachelorProgram.
+
+uni:Faculty1 a uni:Faculty; uni:hasDepartment uni:dep1.
+
+uni:dep1 a uni:department; uni:hasStudent uni:Jukka.
+
+uni:Mikko a uni:Student; uni:isStudy  uni:Computing.
+
+uni:Timo a uni:Student; uni:isStudy  uni:Computing.
+
+uni:Sami a uni:Student; uni:isStudy  uni:BBA.
+ 
+uni:Professor1 a uni:professor; uni:inChargeOf  uni:computing; uni:hasWorkAt uni:Jyu.
+
+uni:Professor2 a uni:professor; uni:inChargeOf  uni:Sim; uni:hasWorkAt uni:Jyu.
+
+uni:Professor3 a uni:professor; uni:hasWorkAt uni:Jyu.
+
+uni:Java a uni:Course; uni:isHappenIn uni:ClassRoom1.
+
+uni:Dep1 a uni:Department; uni:hasClassRoom uni:ClassRoom1.
+
+uni:Faculty1 a uni:Faculty; uni:hasDepartment uni:Dep1.
+
+uni:ClassRoom1 a uni:ClassRoom.
+
+uni:Sim a uni:MastersProgram; uni:hasNumberOfStudent "20"^^xsd:int .
+
+uni:Wise a uni:MastersProgram; uni:hasNumberOfStudent "30"^^xsd:int .

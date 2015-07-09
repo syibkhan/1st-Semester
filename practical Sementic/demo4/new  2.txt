@@ -1,0 +1,344 @@
+@prefix : <http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68> .
+
+<http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68> rdf:type owl:Ontology .
+
+
+:hasChild rdf:type owl:ObjectProperty ;
+          
+
+
+
+
+
+:hasCitizenship rdf:type owl:ObjectProperty ;
+                
+
+
+
+
+
+:hasFather rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+
+
+
+
+
+:hasGender rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+
+
+
+
+:hasHobby rdf:type owl:ObjectProperty ;
+          
+
+
+
+
+
+
+:hasJob rdf:type owl:ObjectProperty ;
+        
+
+
+
+
+
+:hasMother rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+
+
+
+
+
+:hasStudent rdf:type owl:ObjectProperty ;
+            
+
+
+
+
+
+:hasTeacher rdf:type owl:ObjectProperty ;
+            
+
+
+
+
+:hasWife rdf:type owl:ObjectProperty ;
+         
+
+
+
+
+
+
+:knowLanguage rdf:type owl:ObjectProperty ;
+              
+  
+
+
+
+
+
+:liveIn rdf:type owl:ObjectProperty ;
+        
+
+
+
+
+
+:studiedIn rdf:type owl:ObjectProperty ;
+           
+
+
+
+
+
+
+
+
+
+:hasAge rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+
+
+
+
+
+
+:hasDateOfBirth rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+
+
+
+
+
+:hasEmailAddress rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 
+
+
+
+
+
+
+:hasFavouriteQuote rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   
+
+
+
+
+:hasFullName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+
+
+
+
+
+:hasPhoneNumber rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+
+
+
+:hasWebpage rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+ 
+
+
+
+
+
+
+
+
+:Country rdf:type owl:Class .
+
+
+
+
+:Gender rdf:type owl:Class .
+
+
+
+
+:Hobby rdf:type owl:Class .
+
+
+
+
+
+:Job rdf:type owl:Class .
+
+
+
+
+:Language rdf:type owl:Class .
+
+
+
+
+:Person rdf:type owl:Class .
+
+
+
+
+:University rdf:type owl:Class .
+
+
+
+
+
+
+
+
+
+
+:Amir rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+
+
+:Amma rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+
+
+:Bangladesh rdf:type :Country ,
+                     owl:NamedIndividual .
+
+
+
+
+:C rdf:type :Language ,
+            owl:NamedIndividual .
+
+
+
+:Finland rdf:type :Country ,
+                  owl:NamedIndividual .
+
+
+
+
+:HTML rdf:type :Language ,
+               owl:NamedIndividual .
+
+
+
+:Ibrahim rdf:type :Person;
+         
+         :hasPhoneNumber "+358645747224"^^xsd:string ;
+         
+         :hasDateOfBirth "17.09.1986"^^xsd:string ;
+         
+         :hasAge "27.5"^^xsd:float ;
+         
+         :hasFavouriteQuote "Honesty is the best policy."^^xsd:string ;
+         
+         :hasFullName "Syed Ibrahim Khandker"^^xsd:string ;
+         
+         :hasEmailAddress "bd.syed@gmail.com"^^xsd:string ;
+         
+         :hasWebpage "http://users.jyu.fi/~syibkhan"^^xsd:string ;
+         
+         :hasStudent :Amir ;
+         
+         :hasMother :Amma ;
+         
+         :hasCitizenship :Bangladesh ;
+         
+         :knowLanguage :C ;
+         
+         :liveIn :Finland ;
+         
+         :knowLanguage :HTML , :C, :Java ;
+         
+         :studiedIn :Jyu ;
+         
+         :hasGender :Male ;
+         
+         :hasFather :Mohsin ;
+         
+         :hasChild :Musa ;
+         
+         :hasHobby :Playing_Badminton ;
+         
+         :hasJob :Programmer ;
+         
+         :hasWife :Sadia ;
+         
+         :hasTeacher :Vagan .
+
+
+
+
+
+:Java rdf:type :Language ,
+               owl:NamedIndividual .
+
+
+
+
+
+:Jyu rdf:type :University ,
+              owl:NamedIndividual .
+
+
+
+
+:Male rdf:type :Gender ,
+               owl:NamedIndividual .
+
+
+
+:Mohsin rdf:type :Person ,
+                 owl:NamedIndividual .
+
+
+
+:Musa rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+
+:Playing_Badminton rdf:type :Hobby ,
+                            owl:NamedIndividual .
+
+
+
+
+:Programmer rdf:type :Job ,
+                     owl:NamedIndividual .
+
+
+
+
+
+:Sadia rdf:type :Person ,
+                owl:NamedIndividual .
+
+
+
+
+:Vagan rdf:type :Person ,
+                owl:NamedIndividual .
+
+

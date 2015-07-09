@@ -1,0 +1,23 @@
+
+
+
+
+
+WHERE {
+?person f:age ?age . FILTER (?age < 30)
+?person e:worksAs ?job. ?job a j:ResearchJob.
+?person f:firstName ?firstName ;
+f:surName ?surname
+BIND(CONCAT(?firstName," ",?surname) AS ?fullName)
+}
+
+
+
+WHERE {?x f:age ?Age ; f:firstName ?firstName ;
+f:surName ?surName.
+?x e:worksAs ?job .
+?job rdf:type j:ResearchJob .
+FILTER(?Age < 30).
+BIND(CONCAT(?firstName," ",?surName) AS ?fullName)
+}
+ORDER BY ASC (?Age)

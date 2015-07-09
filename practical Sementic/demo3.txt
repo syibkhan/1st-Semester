@@ -1,0 +1,81 @@
+Prefix u: <http://www.jyu.fi/ontology#>
+Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+rdfs:resource		a 	rdfs:class.
+
+u:Employee 		a	 rdfs:class;
+u:Employee 	rdfs:subClassOf	 rrdfs:resource.
+
+	u:Lecturer 		a	 rdfs:class;		
+	u:Lecturer	 rdfs:subClassOf	 u:Employee.
+
+	u:teaches		a		rdf:property;
+			rdfs:domain	u:Lecturer;
+			rdfs:range	u:Course.
+
+	u:hasFirsrtName 	rdf:type	rdf:property;
+				rdfs:domain	u:Lecturer;
+				rdfs:range	xsd:string.
+
+	u:hasSurName 		rdf:type	rdf:property;
+				rdfs:domain	u:Lecturer;
+				rdfs:range	xsd:string.
+
+	u:Researcher		 a	 	rdfs:class;
+	u:Researcher	 rdfs:subClassOf	 u:Employee.
+
+	u:Administrator		a	 	rdfs:class;
+	u:Administrator rdfs:subClassOf 	u:Employee.
+
+				u:Rector		a	 	rdfs:class;
+				u:Rector 	rdfs:subClassOf 	u:Administrator.
+
+				u:Vice-rectpr		a	 	rdfs:class;
+				u:Vice-rector	 rdfs:subClassOf 	u:Administrator.
+
+				u:Dean			a	 	rdfs:class;
+				u:Dean		 rdfs:subClassOf	 u:Administrator.
+
+				u:Vice-dean		a	 	rdfs:class;
+				u:Vice-dean 	rdfs:subClassOf	 	u:Administrator.
+
+u:University		a	 	rdfs:Class;
+u:University 	rdfs:subClassOf 	rdfs:Resource.
+
+		u:hasUnit 	rdf:type	rdf:property;
+				rdfs:domain	u:University;
+				rdfs:range	u:Unit.
+
+u:Course	 a	 		rdfs:Class;
+u:Course 	rdfs:subClassOf 	rdfs:Resource.
+
+	u:offeredBy	a		rdf:property;
+			rdfs:domain	u:Course;
+			rdfs:range	u:Unit.
+
+	u:hasCredits	a		rdf:property;
+			rdfs:domain	u:Course;
+			rdfs:range	xsd:int.
+
+
+u:Unit 		 a	 		rdfs:Class;
+u:Unit	 	rdfs:subClassOf 	rdfs:Resource.
+
+	u:Department		 a	 		rdfs:Class;
+	u:Department 		rdfs:subClassOf 	u:Unit.
+
+	u:Faculty		 a	 		rdfs:Class;
+	u:Faculty 		rdfs:subClassOf 	u:Unit.
+
+		u:hasDepartment		a		rdf:property;
+					rdfs:domain	u:Faculty;
+					rdfs:range	u:Department.
+	
+	u:ServiceDepartment 		 a	 	rdfs:Class;
+	u:ServiceDepartment 	rdfs:subClassOf 	u:Unit.
+
+	u:IndependentInstitute		 a	 	rdfs:Class;
+	u:IndependentInstitute 		rdfs:subClassOf	 u:Unit.
+

@@ -1,0 +1,11 @@
+C:\Users\Ibrahim\Desktop\study\practical Sementic\jena\apache-jena-2.12.1
+
+SET JENAROOT=C:\Users\Ibrahim\Desktop\study\practical Sementic\jena\apache-jena-2.12.1
+SET PATH=%PATH%;%JENAROOT\bin
+
+
+
+querylang-2.1.13.jar
+
+
+java -jar querylang-2.1.13.jar

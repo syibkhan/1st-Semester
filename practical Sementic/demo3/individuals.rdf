@@ -1,0 +1,14 @@
+@prefix x: <http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-16#> .
+@prefix xsd: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+x:Finland a  x:Country ; x:hasCapitalCity x:Helsinki.
+
+x:Ibrahim a  x:Man ; x:hasWife x:Sadia.
+
+x:Tea a  x:English_food ; x:hasPrice "2"^^xsd:int .
+
+x:Helsinki a  x:City ; x:hasPopulation "150000"^^xsd:int .
+
+x:Sadia a  x:Woman ; x:hasWife x:Sadia.

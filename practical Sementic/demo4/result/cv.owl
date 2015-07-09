@@ -1,0 +1,455 @@
+@prefix : <http://users.jyu.fi/~syibkhan/cv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://users.jyu.fi/~syibkhan/cv> .
+
+<http://users.jyu.fi/~syibkhan/cv> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasChild
+
+:hasChild rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Person ;
+          
+          rdfs:range :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasCitizenship
+
+:hasCitizenship rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Country ;
+                
+                rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasFather
+
+:hasFather rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Person ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasGender
+
+:hasGender rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Gender ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasHobby
+
+:hasHobby rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :Hobby ;
+          
+          rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasJob
+
+:hasJob rdf:type owl:ObjectProperty ;
+        
+        rdfs:range :Job ;
+        
+        rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasMother
+
+:hasMother rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Person ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasStudent
+
+:hasStudent rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Person ;
+            
+            rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasTeacher
+
+:hasTeacher rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Person ;
+            
+            rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasWife
+
+:hasWife rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :Person ;
+         
+         rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#knowLanguage
+
+:knowLanguage rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :Language ;
+              
+              rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#liveIn
+
+:liveIn rdf:type owl:ObjectProperty ;
+        
+        rdfs:range :Country ;
+        
+        rdfs:domain :Person .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#studiedIn
+
+:studiedIn rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Person ;
+           
+           rdfs:range :University .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasAge
+
+:hasAge rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        
+        rdfs:domain :Person ;
+        
+        rdfs:range xsd:float .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasDateOfBirth
+
+:hasDateOfBirth rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:domain :Person ;
+                
+                rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasEmailAddress
+
+:hasEmailAddress rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 
+                 rdfs:domain :Person ;
+                 
+                 rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasFavouriteQuote
+
+:hasFavouriteQuote rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   
+                   rdfs:domain :Person ;
+                   
+                   rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasFullName
+
+:hasFullName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :Person ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasPhoneNumber
+
+:hasPhoneNumber rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:domain :Person ;
+                
+                rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#hasWebpage
+
+:hasWebpage rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            
+            rdfs:domain :Person ;
+            
+            rdfs:range xsd:string .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Country
+
+:Country rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Gender
+
+:Gender rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Hobby
+
+:Hobby rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Job
+
+:Job rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Language
+
+:Language rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Person
+
+:Person rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#University
+
+:University rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Amir
+
+:Amir rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Amma
+
+:Amma rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Bangladesh
+
+:Bangladesh rdf:type :Country ,
+                     owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#C
+
+:C rdf:type :Language ,
+            owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Finland
+
+:Finland rdf:type :Country ,
+                  owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#HTML
+
+:HTML rdf:type :Language ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Ibrahim
+
+:Ibrahim rdf:type :Person ,
+                  owl:NamedIndividual ;
+         
+         :hasPhoneNumber "+358645747224"^^xsd:string ;
+         
+         :hasDateOfBirth "17.09.1986"^^xsd:string ;
+         
+         :hasAge "27.5"^^xsd:float ;
+         
+         :hasFavouriteQuote "Honesty is the best policy."^^xsd:string ;
+         
+         :hasFullName "Syed Ibrahim Khandker"^^xsd:string ;
+         
+         :hasEmailAddress "bd.syed@gmail.com"^^xsd:string ;
+         
+         :hasWebpage "http://users.jyu.fi/~syibkhan"^^xsd:string ;
+         
+         :hasStudent :Amir ;
+         
+         :hasMother :Amma ;
+         
+         :hasCitizenship :Bangladesh ;
+         
+         :knowLanguage :C ;
+         
+         :liveIn :Finland ;
+         
+         :knowLanguage :HTML ,
+                       :Java ;
+         
+         :studiedIn :Jyu ;
+         
+         :hasGender :Male ;
+         
+         :hasFather :Mohsin ;
+         
+         :hasChild :Musa ;
+         
+         :hasHobby :Playing_Badminton ;
+         
+         :hasJob :Programmer ;
+         
+         :hasWife :Sadia ;
+         
+         :hasTeacher :Vagan .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Java
+
+:Java rdf:type :Language ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Jyu
+
+:Jyu rdf:type :University ,
+              owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Male
+
+:Male rdf:type :Gender ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Mohsin
+
+:Mohsin rdf:type :Person ,
+                 owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Musa
+
+:Musa rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Playing_Badminton
+
+:Playing_Badminton rdf:type :Hobby ,
+                            owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Programmer
+
+:Programmer rdf:type :Job ,
+                     owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Sadia
+
+:Sadia rdf:type :Person ,
+                owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/cv#Vagan
+
+:Vagan rdf:type :Person ,
+                owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

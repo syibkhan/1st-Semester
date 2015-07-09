@@ -1,0 +1,455 @@
+@prefix : <http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68> .
+
+<http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasChild
+
+:hasChild rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Person ;
+          
+          rdfs:range :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasCitizenship
+
+:hasCitizenship rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Country ;
+                
+                rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasFather
+
+:hasFather rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Person ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasGender
+
+:hasGender rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Gender ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasHobby
+
+:hasHobby rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :Hobby ;
+          
+          rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasJob
+
+:hasJob rdf:type owl:ObjectProperty ;
+        
+        rdfs:range :Job ;
+        
+        rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasMother
+
+:hasMother rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Person ;
+           
+           rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasStudent
+
+:hasStudent rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Person ;
+            
+            rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasTeacher
+
+:hasTeacher rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Person ;
+            
+            rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasWife
+
+:hasWife rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :Person ;
+         
+         rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#knowLanguage
+
+:knowLanguage rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :Language ;
+              
+              rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#liveIn
+
+:liveIn rdf:type owl:ObjectProperty ;
+        
+        rdfs:range :Country ;
+        
+        rdfs:domain :Person .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#studiedIn
+
+:studiedIn rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Person ;
+           
+           rdfs:range :University .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasAge
+
+:hasAge rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        
+        rdfs:domain :Person ;
+        
+        rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasDateOfBirth
+
+:hasDateOfBirth rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:domain :Person ;
+                
+                rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasEmailAddress
+
+:hasEmailAddress rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 
+                 rdfs:domain :Person ;
+                 
+                 rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasFavouriteQuote
+
+:hasFavouriteQuote rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   
+                   rdfs:domain :Person ;
+                   
+                   rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasFullName
+
+:hasFullName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :Person ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasPhoneNumber
+
+:hasPhoneNumber rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:domain :Person ;
+                
+                rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#hasWebpage
+
+:hasWebpage rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            
+            rdfs:domain :Person ;
+            
+            rdfs:range xsd:string .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Country
+
+:Country rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Gender
+
+:Gender rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Hobby
+
+:Hobby rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Job
+
+:Job rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Language
+
+:Language rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Person
+
+:Person rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#University
+
+:University rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Amir
+
+:Amir rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Amma
+
+:Amma rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Bangladesh
+
+:Bangladesh rdf:type :Country ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#C
+
+:C rdf:type :Language ,
+            owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Finland
+
+:Finland rdf:type :Country ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#HTML
+
+:HTML rdf:type :Language ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Ibrahim
+
+:Ibrahim rdf:type :Person ,
+                  owl:NamedIndividual ;
+         
+         :hasPhoneNumber "+358645747224"^^xsd:string ;
+         
+         :hasDateOfBirth "17.09.1986"^^xsd:string ;
+         
+         :hasAge "27.5"^^xsd:float ;
+         
+         :hasFavouriteQuote "Honesty is the best policy."^^xsd:string ;
+         
+         :hasFullName "Syed Ibrahim Khandker"^^xsd:string ;
+         
+         :hasEmailAddress "bd.syed@gmail.com"^^xsd:string ;
+         
+         :hasWebpage "http://users.jyu.fi/~syibkhan"^^xsd:string ;
+         
+         :hasStudent :Amir ;
+         
+         :hasMother :Amma ;
+         
+         :hasCitizenship :Bangladesh ;
+         
+         :knowLanguage :C ;
+         
+         :liveIn :Finland ;
+         
+         :knowLanguage :HTML ,
+                       :Java ;
+         
+         :studiedIn :Jyu ;
+         
+         :hasGender :Male ;
+         
+         :hasFather :Mohsin ;
+         
+         :hasChild :Musa ;
+         
+         :hasHobby :Playing_Badminton ;
+         
+         :hasJob :Programmer ;
+         
+         :hasWife :Sadia ;
+         
+         :hasTeacher :Vagan .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Java
+
+:Java rdf:type :Language ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Jyu
+
+:Jyu rdf:type :University ,
+              owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Male
+
+:Male rdf:type :Gender ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Mohsin
+
+:Mohsin rdf:type :Person ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Musa
+
+:Musa rdf:type :Person ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Playing_Badminton
+
+:Playing_Badminton rdf:type :Hobby ,
+                            owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Programmer
+
+:Programmer rdf:type :Job ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Sadia
+
+:Sadia rdf:type :Person ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ibrahim/ontologies/2014/10/untitled-ontology-68#Vagan
+
+:Vagan rdf:type :Person ,
+                owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

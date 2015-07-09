@@ -1,0 +1,445 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix ex: <http://www.smith-family.com/familyOntology.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://www.smith-family.com/familyOntology.owl#hasChild
+
+ex:hasChild rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.smith-family.com/familyOntology.owl#hasHusband
+
+ex:hasHusband rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.smith-family.com/familyOntology.owl#hasPet
+
+ex:hasPet rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.smith-family.com/familyOntology.owl#hasWife
+
+ex:hasWife rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasChild
+
+<http://www.co-ode.org/ontologies/ont.owl#hasChild> rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasCousin
+
+<http://www.co-ode.org/ontologies/ont.owl#hasCousin> rdf:type owl:ObjectProperty ;
+                                                     
+                                                     rdfs:domain ex:Person ;
+                                                     
+                                                     rdfs:range ex:Person .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasHusband
+
+<http://www.co-ode.org/ontologies/ont.owl#hasHusband> rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasPet
+
+<http://www.co-ode.org/ontologies/ont.owl#hasPet> rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasWife
+
+<http://www.co-ode.org/ontologies/ont.owl#hasWife> rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#GrandParent
+
+<http://www.co-ode.org/ontologies/ont.owl#GrandParent> rdf:type owl:Class .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#PetLover
+
+<http://www.co-ode.org/ontologies/ont.owl#PetLover> rdf:type owl:Class .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Widow
+
+<http://www.co-ode.org/ontologies/ont.owl#Widow> rdf:type owl:Class .
+
+
+
+###  http://www.smith-family.com/familyOntology.owl#DeadPerson
+
+ex:DeadPerson rdf:type owl:Class .
+
+
+
+###  http://www.smith-family.com/familyOntology.owl#LivingPerson
+
+ex:LivingPerson rdf:type owl:Class .
+
+
+
+###  http://www.smith-family.com/familyOntology.owl#Person
+
+ex:Person rdf:type owl:Class .
+
+
+
+###  http://www.smith-family.com/familyOntology.owl#Pet
+
+ex:Pet rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#alice
+
+:alice rdf:type ex:LivingPerson ,
+                ex:Person ,
+                owl:NamedIndividual ;
+       
+       <http://www.co-ode.org/ontologies/ont.owl#hasHusband> :andy ;
+       
+       <http://www.co-ode.org/ontologies/ont.owl#hasChild> :bill ,
+                                                           :harry .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#andy
+
+:andy rdf:type ex:LivingPerson ,
+               ex:Person ,
+               owl:NamedIndividual ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasWife> :alice ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasChild> :bill ,
+                                                          :harry .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#bill
+
+:bill rdf:type ex:LivingPerson ,
+               ex:Person ,
+               owl:NamedIndividual ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasChild> :john ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasWife> :kate .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#charles
+
+:charles rdf:type ex:LivingPerson ,
+                  ex:Person ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#dale
+
+:dale rdf:type ex:Pet ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#dana
+
+:dana rdf:type ex:LivingPerson ,
+               ex:Person ,
+               owl:NamedIndividual ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasChild> :charles ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasHusband> :harry ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasChild> :robert .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#harry
+
+:harry rdf:type ex:LivingPerson ,
+                ex:Person ,
+                owl:NamedIndividual ;
+       
+       <http://www.co-ode.org/ontologies/ont.owl#hasChild> :charles ;
+       
+       <http://www.co-ode.org/ontologies/ont.owl#hasWife> :dana ;
+       
+       <http://www.co-ode.org/ontologies/ont.owl#hasChild> :robert .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#jane
+
+:jane rdf:type ex:LivingPerson ,
+               ex:Person ,
+               owl:NamedIndividual ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasChild> :alice ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasPet> :dale ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasHusband> :mark .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#john
+
+:john rdf:type ex:LivingPerson ,
+               ex:Person ,
+               owl:NamedIndividual ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasPet> :sparky .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#kate
+
+:kate rdf:type ex:LivingPerson ,
+               ex:Person ,
+               owl:NamedIndividual ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasHusband> :bill ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasChild> :john ,
+                                                          :mary .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#mark
+
+:mark rdf:type ex:DeadPerson ,
+               ex:Person ,
+               owl:NamedIndividual ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasChild> :alice ;
+      
+      <http://www.co-ode.org/ontologies/ont.owl#hasWife> :jane .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#mary
+
+:mary rdf:type ex:LivingPerson ,
+               ex:Person ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#robert
+
+:robert rdf:type ex:LivingPerson ,
+                 ex:Person ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#sparky
+
+:sparky rdf:type ex:Pet ,
+                 owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    Rules
+#
+#################################################################
+
+
+<urn:swrl#x> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#a> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#f> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#b> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#s> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#y> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#z> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+<urn:swrl#p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.co-ode.org/ontologies/ont.owl#Widow> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> ex:Person ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasHusband> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#y>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> ex:DeadPerson ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#y>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.co-ode.org/ontologies/ont.owl#GrandParent> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasChild> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#y>
+                                                               ] ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:rest rdf:nil ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasChild> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#y> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#z>
+                                                                          ]
+                                                              ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> ex:Person ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest rdf:nil ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasPet> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#p> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                               ]
+                                                   ] ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> ex:Person ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.co-ode.org/ontologies/ont.owl#PetLover> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                    ]
+                                        ]
+] .
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+  <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:rest rdf:nil ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasCousin> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#f> ;
+                                                      <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#s>
+                                                    ]
+                                        ] ;
+  <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                      <http://www.w3.org/2003/11/swrl#classPredicate> ex:Person ;
+                                                      <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                    ] ;
+                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                            <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasChild> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#b> ;
+                                                                            <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#s>
+                                                                          ] ;
+                                                                rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasChild> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#a> ;
+                                                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                                                     ] ;
+                                                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                      rdf:rest rdf:nil ;
+                                                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasChild> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#b> ;
+                                                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#x>
+                                                                                                ]
+                                                                                    ]
+                                                                         ]
+                                                              ] ;
+                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                 <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.co-ode.org/ontologies/ont.owl#hasChild> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl#a> ;
+                                                                 <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl#f>
+                                                               ]
+                                                   ]
+                                        ]
+] .
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

@@ -1,0 +1,85 @@
+@prefix  m: <http://users.jyu.fi/~edmuaman/practical_web/musicOntology.owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+##Individuals
+
+m:ahmedBukarit rdf:type m:MaleSinger  ;   
+              m:hasFirstName "Ahmed"^^xsd:string ;
+              m:hasLastName "Bukarit"^^xsd:string ;
+              m:hasMusic m:ajban ,
+                        m:kamTashtaki .
+
+m:ajban rdf:type m:NasheedMusic  ;   
+       m:songLength "02:02:00"^^xsd:time ;     
+       m:songName "Ajban"^^xsd:string ;       
+       m:isMusicPerformedBy m:ahmedBukarit ;      
+       m:isMusicComposedBy m:jabirAhmed .
+
+m:allAlongTheWatchTower rdf:type m:GuitarMusic ;                      
+                       m:songLength "04:03:00"^^xsd:time ;
+                       m:songName "All Along the Watch Tower"^^xsd:string ;
+                       m:isMusicPerformedBy m:jimiHendrix ;
+                       m:isMusicComposedBy m:jimiHendrix ;
+                       m:hasMusicGenre m:popRock .
+
+m:houseBurningDown rdf:type m:GuitarMusic ;
+                  m:songLength "06:03:00"^^xsd:time ;
+                  m:songName "House Burning Down"^^xsd:string ;
+                  m:isMusicComposedBy m:jimiHendrix ;
+                  m:isMusicPerformedBy m:jimiHendrix ;
+                  m:hasMusicGenre m:popRock .
+
+m:jabirAhmed rdf:type m:MaleComposer ;
+            m:hasLastName "Ahmed"^^xsd:string ;
+            m:hasFirstName "Jabir"^^xsd:string ;
+            m:isComposerOf m:ajban ,
+                          m:kamTashtaki .
+
+
+m:jimiHendrix rdf:type m:MaleSinger  ;
+             m:hasLastName "Hendrix"^^xsd:string ;
+             m:hasFirstName "Jimi "^^xsd:string ;
+             m:hasMusic m:allAlongTheWatchTower ;
+             m:playsInstrument m:electricGuitar ;
+			 m:isComposerOf m:houseBurningDown;
+			 m:isComposerOf m:stillRainingStillDreaming;
+             m:hasMusic m:houseBurningDown ,
+                       m:stillRainingStillDreaming .
+
+m:kamTashtaki rdf:type m:NasheedMusic  ;
+             m:songLength "05:03:00"^^xsd:time ;
+             m:songName "kam Tashtaki"^^xsd:string ;
+             m:isMusicPerformedBy m:ahmedBukarit ;
+             m:isMusicComposedBy m:jabirAhmed .
+
+
+m:popRock rdf:type m:Rock ;
+         m:generDescription "Music genre which mixes a catchy pop style and light lyrics in its (typically) guitar-based rock songs. "^^xsd:string .
+
+
+
+m:stillRainingStillDreaming rdf:type m:GuitarMusic  ;
+                           m:songLength "05:03:00"^^xsd:time ;
+                           m:songName "still Raining StillDreaming"^^xsd:string ;
+                           m:isMusicComposedBy m:jimiHendrix ;
+                           m:isMusicPerformedBy m:jimiHendrix ;
+                           m:hasMusicGenre m:popRock .
+
+m:electricladyland rdf:type m:Album ;     
+                  m:totalAlbumTracks "16"^^xsd:int ;      
+                  m:relasedDate "1968-10-25"^^xsd:date ;
+                  m:albumTitle "electric ladyland"^^xsd:string ;
+                  m:consistsMusic m:allAlongTheWatchTower ,
+                                 m:houseBurningDown ,
+                                 m:stillRainingStillDreaming .
+								 
+m:entasafAlLayl rdf:type m:Album ;
+               m:totalAlbumTracks "2"^^xsd:int ;
+               m:relasedDate "2000-01-01"^^xsd:date ;
+               m:albumTitle "Entasaf Al-Layl"^^xsd:string ;
+               m:consistsMusic m:ajban ,
+                              m:kamTashtaki .
+	   

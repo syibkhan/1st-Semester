@@ -1,0 +1,2 @@
+@prefix ex: <http://www.smith-family.com/familyOntology.owl#> . 
+{?x ex:hasChild ?y} => {?y ex:hasParent ?x} .

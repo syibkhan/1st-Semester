@@ -1,0 +1,60 @@
+@prefix uni : <http://users.jyu.fi/~syibkhan/university.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://users.jyu.fi/~syibkhan/university.owl> .
+
+
+
+
+uni:Accountant1 rdf:type uni:Accountant.
+
+uni:ClassRoom1 rdf:type uni:ClassRoom.
+
+uni:Computing rdf:type uni:BachelorProgram.
+
+uni:Dean1 rdf:type uni:Dean.
+
+uni:Dean2 rdf:type uni:Dean.
+
+uni:Dep1 rdf:type uni:Department.
+
+uni:Dep2 rdf:type uni:Department.
+
+uni:Dep3 rdf:type uni:Department.
+
+uni:Faculty1 rdf:type uni:Faculty; uni:hasDepartment uni:Dep1 , uni:Dep2 , uni:Dep3 .
+
+uni:HallRoom1 rdf:type uni:HallRoom.
+
+uni:Jukka rdf:type uni:MastersStudent; uni:hasFirstName "Jukka"^^xsd:string ; uni:hasLastName "Lanu"^^xsd:string .
+
+:Jyu rdf:type :University; uni:hasRactor uni:Ractor1.
+
+uni:Lab1 rdf:type uni:Lab; uni:hasFacilityFor uni:Mika.
+
+uni:Lecturer1 rdf:type uni:Lecturer.
+
+uni:Mika rdf:type uni:PhdStudent.
+
+uni:Mikko rdf:type uni:DegreeStudent; uni:hasStudentID "001122"^^xsd:int .
+
+uni:Phd1 rdf:type uni:PhdProgram.
+
+uni:Professor1 rdf:type uni:Professor; uni:isProgrammingTeacherOf uni:Jukka .
+
+uni:Ractor1 rdf:type uni:Ractor.
+
+uni:Researcher1 rdf:type uni:Researcher.
+
+uni:Researcher1 uni:hasPublication  uni:ComputingTheory.
+
+uni:ComputingTheory uni:hasOwn uni:GoalMadel.
+
+uni:SOA rdf:type uni:Course; uni:hasECTS "5"^^xsd:int ; uni:hasPassMark "50"^^xsd:int .
+
+uni:Sim rdf:type uni:MastersProgram.
+
+uni:Wise rdf:type uni:MastersProgram; uni:hasNumberOfStudent "30"^^xsd:int .

@@ -1,0 +1,37 @@
+PREFIX dc:  <http://purl.org/dc/elements/1.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT 
+  { GRAPH <http://www.example.com/ont#scBooks> { ?book ?p ?v } }
+WHERE
+  { GRAPH  <http://example/bookStore>
+       { ?book dc:date ?date .
+         FILTER ( ?date > "1970-01-01T00:00:00-02:00"^^xsd:dateTime )
+         ?book ?p ?v
+  } }	
+
+
+
+
+@prefix ex: <http://www.example.com/ont#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+INSERT
+{ GRAPH <http://www.example.com/ont#scBooks> { ?book ?p ?v } }
+WHERE
+{ GRAPH <http://www.example.com/ont#books>
+{ ?book a ex:Science .
+?book ?p ?v
+}
+} ;
+WITH <http://www.example.com/ont#books>
+DELETE
+{ ?book ?p ?v }
+WHERE
+{ GRAPH <http://www.example.com/ont#books>
+{ ?book a ex:Science .
+?book ?p ?v
+}
+} ;

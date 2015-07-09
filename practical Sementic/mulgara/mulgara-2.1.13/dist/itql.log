@@ -1,0 +1,28 @@
+2014-11-05 12:14:58,229 WARN  [main] itql.TqlSession - Couldn't execute command
+org.mulgara.connection.ConnectionException: Unable to connect to a server
+	at org.mulgara.connection.SessionConnection.setServerUri(SessionConnection.java:334)
+	at org.mulgara.connection.SessionConnection.<init>(SessionConnection.java:101)
+	at org.mulgara.connection.ConnectionFactory.newConnection(ConnectionFactory.java:153)
+	at org.mulgara.itql.TqlAutoInterpreter.establishConnection(TqlAutoInterpreter.java:248)
+	at org.mulgara.itql.TqlAutoInterpreter.establishConnection(TqlAutoInterpreter.java:225)
+	at org.mulgara.itql.TqlAutoInterpreter.executeCommand(TqlAutoInterpreter.java:116)
+	at org.mulgara.itql.TqlSession.executeCommand(TqlSession.java:270)
+	at org.mulgara.itql.TqlSession.prefetchModels(TqlSession.java:531)
+	at org.mulgara.itql.TqlSession.runInterface(TqlSession.java:385)
+	at org.mulgara.itql.TqlSession.main(TqlSession.java:158)
+Caused by: org.mulgara.server.driver.SessionFactoryFinderException: Couldn't create session factory for rmi://S21SM/server1
+	at org.mulgara.server.driver.SessionFactoryFinder.newSessionFactory(SessionFactoryFinder.java:188)
+	at org.mulgara.connection.SessionConnection.setServerUri(SessionConnection.java:325)
+	... 9 more
+Caused by: java.lang.ClassNotFoundException: org.mulgara.server.local.LocalSessionFactory
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.mulgara.server.driver.SessionFactoryFinder.newSessionFactory(SessionFactoryFinder.java:177)
+	... 10 more

@@ -1,0 +1,72 @@
+@prefix ex: <http://www.example.com/ont#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+INSERT
+  { GRAPH <http://www.example.com/ont#scBooks> { ?book ?p ?o } }
+WHERE
+  { GRAPH  <http://www.example.com/ont#books>
+     { ?book ex:Science ?o 
+     }
+  } ;
+
+WITH <http://www.example.com/ont#books>
+DELETE
+ { ?book ?p ?o }
+WHERE
+ { ?book ex:Science ?o;
+    a ex:Science
+
+ } 
+
+
+
+
+prefix ex: <http://www.example.com/ont#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+
+INSERT
+  { GRAPH <http://www.example.com/ont#scBooks> { ?book ?p ?o } }
+WHERE
+  { GRAPH  <http://www.example.com/ont#books>
+     { ?book ex:Science ?o 
+     }
+  } ;
+
+WITH <http://www.example.com/ont#books>
+DELETE
+ { ?book ?p ?o }
+WHERE
+ { ?book ex:Science ?o 
+ } 
+
+
+
+
+
+
+
+
+
+prefix ex: <http://www.example.com/ont#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+
+INSERT
+  { GRAPH <http://www.example.com/ont#scBooks> { ?s ?p ?o } }
+WHERE
+  { GRAPH  <http://www.example.com/ont#books>
+     { ?s a ex:Science 
+     }
+  } ;
+
+WITH <http://www.example.com/ont#books>
+DELETE
+ { ?s ?p ?o }
+WHERE
+ { ?s a ex:Science
+ } 

@@ -1,0 +1,805 @@
+@prefix : <http://users.jyu.fi/~syibkhan/university.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://users.jyu.fi/~syibkhan/university.owl> .
+
+<http://users.jyu.fi/~syibkhan/university.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasAccountant
+
+:hasAccountant rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :University ;
+               
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAccountant ;
+                            owl:onClass :Accountant ;
+                            owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+                          ] .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasClassRoom
+
+:hasClassRoom rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Department ;
+              
+              rdfs:range :Room .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasDepartment
+
+:hasDepartment rdf:type owl:ObjectProperty ;
+               
+               rdfs:range :Department ;
+               
+               rdfs:domain :Faculty .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasFacilityFor
+
+:hasFacilityFor rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :Lab ;
+                
+                rdfs:range :Student .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasLecturer
+
+:hasLecturer rdf:type owl:ObjectProperty ;
+             
+             rdfs:domain :Department ;
+             
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasLecturer ;
+                          owl:onClass :Lecturer ;
+                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger
+                        ] .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasProfessor
+
+:hasProfessor rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Faculty ;
+              
+              rdfs:range [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProfessor ;
+                           owl:onClass :Professor ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasPublication
+
+:hasPublication rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Publication ;
+                
+                rdfs:domain :Researcher .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasRactor
+
+:hasRactor rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+           
+           rdfs:range :Administrator ;
+           
+           rdfs:domain :University .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasStudent
+
+:hasStudent rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :Department ;
+            
+            rdfs:range :Student .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasWon
+
+:hasWon rdf:type owl:ObjectProperty ;
+        
+        rdfs:range :Achivement ;
+        
+        rdfs:domain :Publication .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasWorkAt
+
+:hasWorkAt rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Professor ;
+           
+           rdfs:range :University .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#inChargeOf
+
+:inChargeOf rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :Professor ;
+            
+            rdfs:range :Program .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#isHappenIn
+
+:isHappenIn rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Course ;
+            
+            rdfs:domain :Room .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#isProgrammingTeacherOf
+
+:isProgrammingTeacherOf rdf:type owl:InverseFunctionalProperty ,
+                                 owl:ObjectProperty ;
+                        
+                        rdfs:domain :Professor ;
+                        
+                        rdfs:range :Student .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#isStudy
+
+:isStudy rdf:type owl:ObjectProperty ;
+         
+         rdfs:domain :Program ;
+         
+         rdfs:range :Student .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasDescription
+
+:hasDescription rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                
+                rdfs:domain :Program ;
+                
+                rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasECTS
+
+:hasECTS rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         
+         rdfs:domain :Course ;
+         
+         rdfs:range xsd:int .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasFirstName
+
+:hasFirstName rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Student ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasLastName
+
+:hasLastName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :Student ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasNumberOfStudent
+
+:hasNumberOfStudent rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    
+                    rdfs:domain :Program ;
+                    
+                    rdfs:range xsd:int .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasPassMark
+
+:hasPassMark rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             
+             rdfs:domain :Course ;
+             
+             rdfs:range xsd:int .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#hasStudentID
+
+:hasStudentID rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              
+              rdfs:domain :Student ;
+              
+              rdfs:range xsd:int .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Accountant
+
+:Accountant rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Administrator .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Achivement
+
+:Achivement rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Administrator
+
+:Administrator rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Employee .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#BachelorProgram
+
+:BachelorProgram rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Program ;
+                 
+                 owl:disjointWith :MastersProgram ,
+                                  :PhdProgram .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#ClassRoom
+
+:ClassRoom rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Room ;
+           
+           owl:disjointWith :HallRoom ,
+                            :Lab .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Course
+
+:Course rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Dean
+
+:Dean rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:oneOf ( :Dean2
+                                        :Dean1
+                                      )
+                          ] ;
+      
+      rdfs:subClassOf :Administrator .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#DegreeStudent
+
+:DegreeStudent rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Student ;
+               
+               owl:disjointWith :MastersStudent ,
+                                :PhdStudent .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Department
+
+:Department rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Unit ;
+            
+            owl:disjointWith :Faculty .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Employee
+
+:Employee rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Faculty
+
+:Faculty rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Unit ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasDepartment ;
+                           owl:onClass :Department ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#HallRoom
+
+:HallRoom rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Room ;
+          
+          owl:disjointWith :Lab .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Lab
+
+:Lab rdf:type owl:Class ;
+     
+     rdfs:subClassOf :Room ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasFacilityFor ;
+                       owl:allValuesFrom :PhdStudent
+                     ] .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#LabAssistant
+
+:LabAssistant rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :PhdStudent
+                                                         :Researcher
+                                                       )
+                                  ] ;
+              
+              rdfs:subClassOf :Employee .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Lecturer
+
+:Lecturer rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Employee ,
+                          [ rdf:type owl:Class ;
+                            owl:complementOf :Professor
+                          ] .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#MastersProgram
+
+:MastersProgram rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Program ;
+                
+                owl:disjointWith :PhdProgram .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#MastersStudent
+
+:MastersStudent rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Student ;
+                
+                owl:disjointWith :PhdStudent .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#PhdProgram
+
+:PhdProgram rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Program .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#PhdStudent
+
+:PhdStudent rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Student .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Professor
+
+:Professor rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Employee .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Program
+
+:Program rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Publication
+
+:Publication rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Ractor
+
+:Ractor rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Administrator .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Researcher
+
+:Researcher rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Employee ,
+                            [ rdf:type owl:Class ;
+                              owl:unionOf ( :Lecturer
+                                            :Professor
+                                          )
+                            ] .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Room
+
+:Room rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Student
+
+:Student rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Unit
+
+:Unit rdf:type owl:Class .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#University
+
+:University rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Accountant1
+
+:Accountant1 rdf:type :Accountant ,
+                      owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#BBA
+
+:BBA rdf:type :BachelorProgram ,
+              owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#ClassRoom1
+
+:ClassRoom1 rdf:type :ClassRoom ,
+                     owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Computing
+
+:Computing rdf:type :BachelorProgram ,
+                    owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#ComputingTheory
+
+:ComputingTheory rdf:type :Publication ,
+                          owl:NamedIndividual ;
+                 
+                 :hasWon :GoldMadel .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Dean1
+
+:Dean1 rdf:type :Dean ,
+                owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Dean2
+
+:Dean2 rdf:type :Dean ,
+                owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Dep1
+
+:Dep1 rdf:type :Department ,
+               owl:NamedIndividual ;
+      
+      :hasClassRoom :ClassRoom1 ;
+      
+      :hasStudent :Jukka .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Dep2
+
+:Dep2 rdf:type :Department ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Dep3
+
+:Dep3 rdf:type :Department ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Faculty1
+
+:Faculty1 rdf:type :Faculty ,
+                   owl:NamedIndividual ;
+          
+          :hasDepartment :Dep1 .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#GoldMadel
+
+:GoldMadel rdf:type :Achivement ,
+                    owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#HallRoom1
+
+:HallRoom1 rdf:type :HallRoom ,
+                    owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Java
+
+:Java rdf:type :Course ,
+               owl:NamedIndividual ;
+      
+      :isHappenIn :ClassRoom1 .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Jukka
+
+:Jukka rdf:type :MastersStudent ,
+                owl:NamedIndividual ;
+       
+       :hasFirstName "Jukka"^^xsd:string ;
+       
+       :hasLastName "Lanu"^^xsd:string .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Jyu
+
+:Jyu rdf:type :University ,
+              owl:NamedIndividual ;
+     
+     :hasRactor :Ractor1 .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Lab1
+
+:Lab1 rdf:type :Lab ,
+               owl:NamedIndividual ;
+      
+      :hasFacilityFor :Mika .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Lecturer1
+
+:Lecturer1 rdf:type :Lecturer ,
+                    owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Mika
+
+:Mika rdf:type :PhdStudent ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Mikko
+
+:Mikko rdf:type :DegreeStudent ,
+                owl:NamedIndividual ;
+       
+       :hasStudentID "001122"^^xsd:int ;
+       
+       :isStudy :Computing .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Phd1
+
+:Phd1 rdf:type :PhdProgram ,
+               owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Professor1
+
+:Professor1 rdf:type :Professor ,
+                     owl:NamedIndividual ;
+            
+            :inChargeOf :Computing ;
+            
+            :isProgrammingTeacherOf :Jukka ;
+            
+            :hasWorkAt :Jyu .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Professor2
+
+:Professor2 rdf:type :Professor ,
+                     owl:NamedIndividual ;
+            
+            :hasWorkAt :Jyu ;
+            
+            :inChargeOf :Sim .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Professor3
+
+:Professor3 rdf:type :Professor ,
+                     owl:NamedIndividual ;
+            
+            :hasWorkAt :Jyu .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Ractor1
+
+:Ractor1 rdf:type :Ractor ,
+                  owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Researcher1
+
+:Researcher1 rdf:type :Researcher ,
+                      owl:NamedIndividual ;
+             
+             :hasPublication :ComputingTheory .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#SOA
+
+:SOA rdf:type :Course ,
+              owl:NamedIndividual ;
+     
+     :hasECTS "5"^^xsd:int ;
+     
+     :hasPassMark "50"^^xsd:int .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Sami
+
+:Sami rdf:type :DegreeStudent ,
+               owl:NamedIndividual ;
+      
+      :isStudy :BBA .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Sim
+
+:Sim rdf:type :MastersProgram ,
+              owl:NamedIndividual .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Timo
+
+:Timo rdf:type :DegreeStudent ,
+               owl:NamedIndividual ;
+      
+      :isStudy :Computing .
+
+
+
+###  http://users.jyu.fi/~syibkhan/university.owl#Wise
+
+:Wise rdf:type :MastersProgram ,
+               owl:NamedIndividual ;
+      
+      :hasNumberOfStudent "30"^^xsd:int ;
+      
+      :hasProfessor :Professor1 .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

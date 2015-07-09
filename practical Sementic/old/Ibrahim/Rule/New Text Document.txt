@@ -1,0 +1,65 @@
+@prefix uni: <http://users.jyu.fi/~syibkhan/university.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+
+uni:Researcher1 a uni:Researcher;
+	uni:hasPublication uni:ComputingTheory.
+
+uni:ComputingTheory a uni:Publication;
+ uni:hasOwn uni:GoalMadel.
+---------
+@prefix uni: <http://users.jyu.fi/~syibkhan/university.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://users.jyu.fi/~syibkhan/university.owl> .
+
+
+{ ?x uni:hasPublication ?y. ?y uni:hasOwn uni:GoalMadel} => { ?x rdf:type uni:GoalMadelistResearcher }.
+******************************************************
+
+
+
+ uni:Faculty1 a uni:Faculty.
+ uni:Faculty1 uni:hasDepartment uni:dep1.
+ uni:dep1 a uni:department.
+ uni:dep1 uni:hasStudent uni:Jukka.
+--------------
+{ ?x uni:hasDepartment ?y. ?y uni:hasStudent ?z} => { ?z uni:StudentOf ?x }.
+***************************************************************************
+
+
+ uni:Mikko a uni:student.
+ uni:Mikko uni:isStudy  uni:computing.
+ uni:Timo a uni:student.
+ uni:Timo uni:isStudy  uni:computing.
+ uni:Professor1 a uni:professor.
+ uni:Professor1 uni:inChargeOf  uni:computing.
+------------------------------
+{ ?x uni:isStudy ?y. ?z uni:inChargeOf ?y} => { ?z uni:SupervisorOf ?x }.
+****************************************************************************
+ uni:Java a uni:Course.
+ uni:ClassRoom1 a uni:ClassRoom.
+  uni:Dep1 a uni:Department.
+   uni:Faculty1 a uni:Faculty.
+  uni:Professor1 a uni:Professor.
+  
+ uni:Java uni:isHappenIn uni:ClassRoom1.
+
+ uni:Dep1 uni:hasClassRoom uni:ClassRoom1.
+
+ uni:Faculty1 uni:hasDepartment uni:Dep1.
+
+--------------------------------
+{ ?course uni:isHappenIn ?classroom. 
+  ?department uni:hasClassRoom ?classroom. 
+  ?faculty uni:hasDepartment  ?department. } => { ?faculty uni:hasArrange ?course }.
+**************************************************************************************
+
+
+
+

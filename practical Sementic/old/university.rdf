@@ -1,0 +1,706 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://users.jyu.fi/~syibkhan/university.owl#"
+     xml:base="http://users.jyu.fi/~syibkhan/university.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <owl:Ontology rdf:about="http://users.jyu.fi/~syibkhan/university.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasAccountant -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasAccountant">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#University"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#hasAccountant"/>
+                <owl:onClass rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Accountant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasDepartment -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasDepartment">
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Department"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasFacilityFor -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasFacilityFor">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Lab"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasLecturer -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasLecturer">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Department"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#hasLecturer"/>
+                <owl:onClass rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Lecturer"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasProfessor -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasProfessor">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Faculty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#hasProfessor"/>
+                <owl:onClass rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasRactor -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasRactor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Administrator"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasWorkAt -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasWorkAt">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Researcher"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#inChargeOf -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#inChargeOf">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Program"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#isProgrammingTeacherOf -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#isProgrammingTeacherOf">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Program"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasECTS -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasECTS">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Course"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasFirstName">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasLastName -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasLastName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasNumberOfStudent -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasNumberOfStudent">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Program"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasPassMark -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasPassMark">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Course"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#hasStudentID -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~syibkhan/university.owl#hasStudentID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Accountant -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Accountant">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Administrator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Administrator -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Administrator">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#BachelorProgram -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#BachelorProgram">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Program"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#MastersProgram"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#PhdProgram"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#ClassRoom -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#ClassRoom">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Room"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#HallRoom"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Lab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Course -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Course"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Dean -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dean">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dean2"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dean1"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Administrator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#DegreeStudent -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#DegreeStudent">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#MastersStudent"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#PhdStudent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Department -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Department">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Unit"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Faculty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Employee -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Employee"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Faculty -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Faculty">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Unit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#hasDepartment"/>
+                <owl:onClass rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Department"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#HallRoom -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#HallRoom">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Room"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Lab"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Lab -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Lab">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Room"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#hasFacilityFor"/>
+                <owl:allValuesFrom rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#PhdStudent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#LabAssistant -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#LabAssistant">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/university.owl#PhdStudent"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Researcher"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Lecturer -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Lecturer">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Employee"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#MastersProgram -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#MastersProgram">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Program"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#PhdProgram"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#MastersStudent -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#MastersStudent">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+        <owl:disjointWith rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#PhdStudent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#PhdProgram -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#PhdProgram">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Program"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#PhdStudent -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#PhdStudent">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Professor -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Professor">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Employee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Program -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Program"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Ractor -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Ractor">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Administrator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Researcher -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Researcher">
+        <rdfs:subClassOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Employee"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Lecturer"/>
+                    <rdf:Description rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Room -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Room"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Student -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Student"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Unit -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Unit"/>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#University -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~syibkhan/university.owl#University"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Accountant1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Accountant1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Accountant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#ClassRoom1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#ClassRoom1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#ClassRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Computing -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Computing">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#BachelorProgram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Dean1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dean1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Dean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Dean2 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dean2">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Dean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Dep1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dep1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Department"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Dep2 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dep2">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Department"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Dep3 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Dep3">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Department"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Faculty1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Faculty1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Faculty"/>
+        <hasDepartment rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Dep1"/>
+        <hasDepartment rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Dep2"/>
+        <hasDepartment rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Dep3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#HallRoom1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#HallRoom1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#HallRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Jukka -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Jukka">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#MastersStudent"/>
+        <hasFirstName rdf:datatype="&xsd;string">Jukka</hasFirstName>
+        <hasLastName rdf:datatype="&xsd;string">Lanu</hasLastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Jyu -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Jyu">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#University"/>
+        <hasRactor rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Ractor1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Lab1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Lab1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Lab"/>
+        <hasFacilityFor rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Mika"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Lecturer1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Lecturer1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Lecturer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Mika -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Mika">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#PhdStudent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Mikko -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Mikko">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#DegreeStudent"/>
+        <hasStudentID rdf:datatype="&xsd;int">001122</hasStudentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Phd1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Phd1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#PhdProgram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Professor1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Professor1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+        <inChargeOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Computing"/>
+        <isProgrammingTeacherOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Jukka"/>
+        <hasWorkAt rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Jyu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Professor2 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Professor2">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+        <hasWorkAt rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Jyu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Ractor1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Ractor1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Ractor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Researcher1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Researcher1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Researcher"/>
+        <hasWorkAt rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Jyu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#SOA -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#SOA">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Course"/>
+        <hasECTS rdf:datatype="&xsd;int">5</hasECTS>
+        <hasPassMark rdf:datatype="&xsd;int">50</hasPassMark>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Sim -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Sim">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#MastersProgram"/>
+        <hasNumberOfStudent rdf:datatype="&xsd;int">20</hasNumberOfStudent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#Wise -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#Wise">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#MastersProgram"/>
+        <hasNumberOfStudent rdf:datatype="&xsd;int">30</hasNumberOfStudent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~syibkhan/university.owl#professor3 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~syibkhan/university.owl#professor3">
+        <rdf:type rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Professor"/>
+        <hasWorkAt rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Jyu"/>
+        <inChargeOf rdf:resource="http://users.jyu.fi/~syibkhan/university.owl#Sim"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

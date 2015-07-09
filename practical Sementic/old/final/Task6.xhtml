@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:uni="http://users.jyu.fi/~syibkhan/university.owl#"
+xmlns:cv="http://users.jyu.fi/~syibkhan/mycv.owl#"
+xmlns:wiki="http://en.wikipedia.org/wiki/"
+xmlns:w3="http://www.w3schools.com/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:dbp="http://dbpedia.org/property/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<head>
+<title>University of Jyvaskyla</title>
+</head>
+<body>
+<div about="uni:Jyu">
+<p> 
+Bachelor programs: <span  rel="uni:BachelorProgram" resource="uni:Computing"> Computing,</span> 
+					<span  rel="uni:BachelorProgram" resource="uni:BBA"> BBA. </span>
+</p>
+<p> 
+Masters programs: <span  rel="uni:MastersProgram" resource="uni:Sim"> Sim, </span>
+				  <span  rel="uni:MastersProgram" resource="uni:Wise">Wise. </span>
+</p>
+
+<div about="uni:Faculty1"> 
+<p> Faculty: <span  rel="uni:hasDepartment" resource="uni:Dep1"> Faculty1 has Department Dep1, which has class room </span> </p> </div>
+<div about="uni:Dep1"> 
+<p> <span rel= "uni:hasClassroom" resource="uni:ClassRoom1" >ClassRoom1.</span> </p>  </div>
+<div about="uni:Java">
+ <p> Java <span rel= "uni:isHappenIn" resource="uni:ClassRoom1" > course happen in ClassRoom1.</span> </p> </div>	
+
+
+
+<div about="uni:Mikko">
+<p> Students:  Mikko and <span rel= "uni:isStudy" resource="uni:Computing" ></span> </p>  </div>
+<div about="uni:Timo">
+<p> Timo are <span rel= "uni:isStudy" resource="uni:Computing" > Studying Computing.</span> </p> </div>
+<div about="uni:Sami"> 
+<p>Sami is studying <span rel= "uni:isStudy" resource="uni:BBA" ></span> BBA  </p></div>
+
+<div about="uni:professor1"> 
+<p> Professor1 <span rel= "uni:hasWorkAt" resource="uni:Jyu" > works at Jyu,</span> 
+he is incharge of <span rel= "uni:inChargeOf" resource="uni:Computing" > Computing.</span></p></div>
+<div about="uni:professor2">
+<p> Professor2 <span rel= "uni:hasWorkAt" resource="uni:Jyu" > works at Jyu,</span> 
+he is incharge of <span rel= "uni:inChargeOf" resource="uni:Sim" > Sim.</span></p></div>
+<div about="uni:professor3"> 
+<p>Professor3 <span rel= "uni:hasWorkAt" resource="uni:Jyu" > works at Jyu.</span> </p> </div>
+
+<div about="uni:Researcher1"> 
+<p> Researcher1 <span rel= "uni:hasWorkAt" resource="uni:Jyu" > works at Jyu,</span> 
+has PublicAtion <span rel= "uni:hasPublicAtion" resource="uni:ComputingTheory" > Computing Theory;</span> </p></div>
+<div about="uni:ComputingTheory"> 
+<p>which won <span rel= "uni:hasWon" resource="uni:GoldMadel" > Gold Madel.</span> </p> </div>
+
+
+</div>
+</body>
+</html>
